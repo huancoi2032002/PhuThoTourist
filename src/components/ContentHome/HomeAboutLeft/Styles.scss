@@ -1,0 +1,19 @@
+.about-me {
+    color: var(--gray-gray-600, #4D4D4D);
+}
+
+.rectangle {
+    background: var(--blue-primary-600, #003F7D);
+}
+.custom-color{
+    color: var(--gray-gray-700, #333);
+}
+.custom-stroke {
+    stroke-width: 2px;
+    stroke: var(--blue-primary-300, #6698CA);
+}
+
+.list-inside {
+    list-style-position: inside;
+    list-style-type: disc;
+}
