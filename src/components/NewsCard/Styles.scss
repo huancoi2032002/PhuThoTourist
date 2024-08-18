@@ -1,0 +1,23 @@
+.newscard-custom {
+    border-radius: 12px;
+    background: #FFF;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.custom-h2-newscard {
+    color: var(--blue-primary-500, #0054A6);
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.custom-p-newscard {
+    color: var(--gray-gray-500, #666);
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+}

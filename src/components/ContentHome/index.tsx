@@ -1,0 +1,5 @@
+export {default as HomeSlider} from './HomeSlider/HomeSlider'
+export {default as HomeAboutLeft} from './HomeAboutLeft/HomeAboutLeft'
+export {default as HomeAboutRight} from './HomeAboutRight/HomeAboutRight'
+export {default as HomePost} from './HomePost/HomePost'
+export {default as HomeService} from './HomeService/HomeService'

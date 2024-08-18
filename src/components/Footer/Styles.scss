@@ -1,0 +1,32 @@
+.custom-footer {
+    background: rgba(0, 37, 73, 0.80);
+    border-top: 1px #FFF;
+    height: 276px;
+    flex-shrink: 0;
+}
+.custom-size-icon{
+    width: 24px !important; 
+}
+.list-inside{
+    color: #FFF;
+}
+.list-inside a{
+    font-size: 16px;
+    color: var(--white, #FFF);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    cursor: default;
+}
+.list-inside span{
+    font-size: 16px;
+    color: var(--white, #FFF);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    cursor: default;
+}
+.custom-text:hover{
+    text-decoration: underline;
+    text-decoration-color: #FFF;
+}
