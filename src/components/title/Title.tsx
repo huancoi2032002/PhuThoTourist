@@ -1,5 +1,5 @@
 import React from "react"
-import { Rectangle } from "../Rectangle/Rectangle"
+import { Rectangle } from "../Rectangles/Rectangle/Rectangle"
 
 
 type TitleProps = {

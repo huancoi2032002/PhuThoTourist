@@ -1,11 +1,15 @@
-import Home from './views/Home/Home';
+
+import Document from './views/Document/Document';
+import Recruitment from './views/Recruitment/Recruitment';
+
+
 
 
 function App() {
 
   return (
     <div className='App'>
-        <Home />
+        <Recruitment />
     </div>
   )
 }

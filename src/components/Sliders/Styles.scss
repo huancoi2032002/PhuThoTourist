@@ -1,0 +1,35 @@
+.custom-detail {
+    align-self: stretch;
+}
+
+.custom-title {
+    color: var(--blue-primary-500, #0054A6);
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.custom-des {
+    overflow: hidden;
+    color: var(--gray-gray-600, #4D4D4D);
+    text-overflow: ellipsis;
+    white-space: normal;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+
+.custom-icon {
+    color: #3376B8; 
+    transition: color 0.3s; 
+}
+
+.custom-icon:hover {
+    color: #003F7D;
+}
+.custom-img{
+    border-top-left-radius: 20px;
+}

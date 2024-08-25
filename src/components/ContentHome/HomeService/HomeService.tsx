@@ -3,7 +3,7 @@ import React from 'react'
 import TueNhi1 from '../../../assets/tuenhi/tuenhi1.jpg';
 import TueNhi2 from '../../../assets/tuenhi/tuenhi2.jpg';
 import TueNhi3 from '../../../assets/tuenhi/tuenhi3.jpg';
-import NewsCard from '../../NewsCard/NewsCard';
+import NewsCard from '../../Cards/NewsCard/NewsCard';
 import './Styles.scss'
 
 const HomeService:React.FC = () => {

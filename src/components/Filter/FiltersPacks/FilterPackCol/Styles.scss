@@ -1,0 +1,26 @@
+.custom-bg-filterpackcol {
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.70);
+    box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.10);
+    backdrop-filter: blur(7.5px);
+}
+
+
+.custom-title-packs {
+    color: var(--blue-primary-500, #0054A6);
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.filterpack-custom:hover  p{
+    color: #0054A6;
+}
+.selected {
+    background-color: #0054A6;
+}
+.selected:hover p {
+    color: #FFF;
+}

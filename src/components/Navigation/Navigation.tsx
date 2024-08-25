@@ -34,7 +34,7 @@ const Navigation: React.FC<NavigationProps> = () => {
             <div className="flex justify-end items-center gap-gap-nav text-sm">
                 <Link to="/home" className={getLinkClassName("/home")}>TRANG CHỦ</Link>
                 <Link to="/articles" className={getLinkClassName("/articles")}>BÀI VIẾT</Link>
-                <Link to="/home" className="p-3"><Logo /></Link>
+                <Link to="/home" className="p-3"><Logo className="" /></Link>
                 <Dropdown
                     menu={{ items: menuDocument }}
                     trigger={['hover']}

@@ -2,7 +2,7 @@
 import React from 'react'
 import Title from '../../title/Title'
 import './Styles.scss'
-import Card from '../../Cards/Card'
+import Card from '../../Cards/Card/Card'
 import TueNhi1 from '../../../assets/tuenhi/tuenhi1.jpg';
 import TueNhi2 from '../../../assets/tuenhi/tuenhi2.jpg';
 import TueNhi3 from '../../../assets/tuenhi/tuenhi3.jpg';

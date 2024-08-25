@@ -1,0 +1,14 @@
+
+.custom-date-input::-webkit-calendar-picker-indicator {
+    display: none;
+    /* Ẩn biểu tượng mặc định trong các trình duyệt WebKit */
+}
+
+.relative {
+    position: relative;
+}
+
+label {
+    pointer-events: auto;
+    /* Đảm bảo label có thể được nhấp */
+}

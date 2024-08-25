@@ -1,0 +1,45 @@
+.custom-title-recruitment {
+    color: var(--blue-primary-600, #003F7D);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.custom-position-recruitment {
+    color: var(--blue-primary-400, #3376B8);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.custom-location-recruitment {
+    color: var(--gray-gray-500, #666);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.custom-status {
+    display: inline-flex;
+    padding: 8px 12px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 46px;
+    background: var(--green-green-50, #E6F7E6);
+}
+
+.custom-des-recruitment {
+    color: var(--gray-gray-500, #666);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

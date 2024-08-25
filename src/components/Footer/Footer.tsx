@@ -38,7 +38,7 @@ const Footer = () => {
                 <Title label="LIÊN HỆ" />
                 <div className="flex h-[161px] flex-col justify-between items-start font-roboto leading-[21px] font-normal">
                     <div className="flex items-start gap-[8px]">
-                        <MapIcon className="w-6 h-6 flex-shrink-0" />
+                        <MapIcon className="w-6 h-6 fill-white flex-shrink-0" />
                         <p className="text-[15px]">15 Đường số 2, Cư xá Lữ Gia, Phường 15, Quận 11, TP. HCM</p>
                     </div>
                     <div className="flex items-start gap-[8px]">

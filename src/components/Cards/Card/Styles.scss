@@ -1,0 +1,72 @@
+.card-custom {
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.image-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.image-container img {
+    transition: transform 0.3s ease;
+}
+
+.card-custom:hover .image-container img {
+    transform: scale(1.25);
+}
+
+.custom-span-admin {
+    color: var(--gray-gray-400, #858585);
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.custom-h2-card {
+    width: 100%;
+    color: var(--blue-primary-500, #0054A6);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    height: 69px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.custom-p-card {
+    color: var(--gray-gray-500, #666);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    height: 84px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.custom-fill-action {
+    fill: #03A600;
+}
+
+.custom-fill {
+    fill: var(--gray-gray-400, #858585);
+}
+
+.custom-text {
+    color: var(--gray-gray-400, #858585);
+    /* Roboto/16px: Regular */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+}

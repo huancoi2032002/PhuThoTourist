@@ -37,13 +37,18 @@ export default {
       backgroundColor: {
         'bgDocument': '#6587A9'
       },
-      padding:{
+      padding: {
         'custom': '20px 519px 20px 531px',
       },
-      gap:{
+      gap: {
         'gap-nav': '80px;'
+      },
+      lineClamp: {
+        3: '3',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 }

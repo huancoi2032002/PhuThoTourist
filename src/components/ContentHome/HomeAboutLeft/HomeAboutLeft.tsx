@@ -1,5 +1,5 @@
 import { Button } from '../../button/Button';
-import { Rectangle } from '../../Rectangle/Rectangle';
+import { Rectangle } from '../../Rectangles/Rectangle/Rectangle';
 import Vector from '../../Vector/Vector';
 import './Styles.scss'
 

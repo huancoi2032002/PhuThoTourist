@@ -1,0 +1,25 @@
+.custom-document-card{
+    box-shadow: 0px 1.776px 7.102px 0px rgba(0, 0, 0, 0.25);
+}
+.custom-img-document-card{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(<path-to-image>) lightgray 50% / cover no-repeat;
+}
+.custom-document-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 96%;
+    color: #fff; // Màu chữ trắng
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.custom-document-card:hover .overlay {
+    opacity: 1;
+}
