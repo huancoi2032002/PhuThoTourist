@@ -16,11 +16,11 @@ const DocumentLayout: React.FC<IDocumentLayoutProps> = ({ children }) => {
     return (
         <div className="w-full relative scroll-container">
             <VideoBackground />
-            <div className="fixed-nav">
+            <div className="fixed-nav z-30">
                 <Navigation />
             </div>
-            <div className='w-full flex flex-col items-center justify-center'>
-                <RectangleTitle label="TUYỂN DỤNG" />
+            <div className='w-full flex flex-col items-center justify-center mt-32'>
+                <RectangleTitle label="BÀI VIẾT" />
             </div>
             <div className="flex flex-col items-center justify-center gap-8 mb-12">
                 <div className="w-full h-full flex items-center justify-center">

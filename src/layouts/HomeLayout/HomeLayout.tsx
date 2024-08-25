@@ -8,7 +8,7 @@ const HomeLayout = () => {
     return (
         <div className="w-full relative">
             <VideoBackground />
-            <div className="fixed-nav">
+            <div className="fixed-nav z-30">
                 <Navigation />
             </div>
             <div className="scroll-container">

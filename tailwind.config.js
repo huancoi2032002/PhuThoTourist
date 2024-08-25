@@ -23,6 +23,7 @@ export default {
         'bgnav': '#002F5C',
         'custom-light-blue': '#9FF',
         'blue-primary-600': '#003F7D',
+        'customColor': '#99FFFF',
       },
       height: {
         'h-nav': '120px',

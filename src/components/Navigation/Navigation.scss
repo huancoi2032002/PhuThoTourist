@@ -1,4 +1,10 @@
+.custom-navigation {
+    border-bottom: 1px #FFF;
 
+    background: rgba(0, 47, 92, 0.80);
+
+    backdrop-filter: blur(7.5px);
+}
 
 .custom-dropdown-menu {
     background-color: #6587A9;
@@ -10,7 +16,8 @@
     width: 122px;
     /* Màu nền khi hover, có thể điều chỉnh để tương phản với màu nền chính */
 }
-.text-decoration-underline{
+
+.text-decoration-underline {
     text-decoration: underline;
     text-decoration-color: #99FFFF;
 }

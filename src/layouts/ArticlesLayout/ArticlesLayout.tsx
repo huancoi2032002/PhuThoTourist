@@ -17,13 +17,14 @@ const ArticlesLayout: React.FC<IArticlesLayoutProps> = ({ children }) => {
     return (
         <div className="w-full relative scroll-container">
             <VideoBackground />
-            <div className="fixed-nav">
+            <div className="fixed-nav z-30">
                 <Navigation />
             </div>
+            <div className='w-full flex flex-col items-center justify-center mt-32 '>
+                <RectangleTitle label="BÀI VIẾT" />
+            </div>
             <div className=" mb-12">
-                <div className='w-full flex flex-col items-center justify-center'>
-                    <RectangleTitle label="BÀI VIẾT" />
-                </div>
+
                 <div className="w-full flex flex-col items-center justify-center gap-6">
 
                     <div className="max-w-[1520px] w-full flex justify-between">
@@ -40,7 +41,7 @@ const ArticlesLayout: React.FC<IArticlesLayoutProps> = ({ children }) => {
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <Footer />
         </div>
