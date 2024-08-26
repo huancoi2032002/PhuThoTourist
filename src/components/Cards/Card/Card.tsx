@@ -1,7 +1,7 @@
 import React from "react";
 import './Styles.scss'
 import { EllipseIcon } from "../../../assets";
-import NameTag from "../../NameTag/NameTag";
+import NameTag from "../../Tag/NameTag/NameTag";
 import { TypeCard } from "../../../Store/Card/TypeCard";
 
 

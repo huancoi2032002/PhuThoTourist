@@ -1,7 +1,7 @@
 import React from "react";
 import { TypeCard } from "../../../Store/Card/TypeCard";
 import { EllipseIcon } from "../../../assets";
-import NameTag from "../../NameTag/NameTag";
+import NameTag from "../../Tag/NameTag/NameTag";
 import './Styles.scss'
 
 const PostCard: React.FC<TypeCard> = ({ src, title, roleName, view, day }) => {

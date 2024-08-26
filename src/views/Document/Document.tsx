@@ -1,6 +1,6 @@
 import DatePickerComponent from "../../components/Filter/FilterDate/DateFilter";
 import Search from "../../components/Search/Search";
-import Table from "../../components/Table/Table";
+import Table from "../../components/Table/TableDocument/TableDocument";
 import { GroupDown } from "../../assets";
 import DocumentCard from "../../components/Cards/DocumentCard/DocumentCard";
 import RectangleTitle from "../../components/Rectangles/RectangleTitle/RectangleTitle";

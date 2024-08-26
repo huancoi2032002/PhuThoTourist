@@ -10,7 +10,7 @@ import FilterPackRow from "../../components/Filter/FiltersPacks/FilterPackRow/Fi
 import NewsPost from "../../components/ContentPost/NewsPost/NewsPost";
 import Layout from "../../layouts/Layout";
 import './Styles.scss'
-import ArticleDetails from "../../components/ContentPost/ArticleDetails/ArticleDetails";
+import ArticleDetails from "./ArticleDetails/ArticleDetails";
 
 const Articles = () => {
     const totalItems = 50; // Tổng số mục

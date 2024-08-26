@@ -1,11 +1,9 @@
-
-
-import React from 'react'
-import './Styles.scss'
-import { LogoRecruitment } from '../../../assets/Logo'
-import { Clock, MapIcon } from '../../../assets'
-import Chips from '../../Chips/Chips'
-import { Button } from '../../button/Button'
+import React from 'react';
+import './Styles.scss';
+import { LogoRecruitment } from '../../../assets/Logo';
+import { Clock, MapIcon } from '../../../assets';
+import { Button } from '../../button/Button';
+import StatusComponent from '../../Tag/StatusComponent/StatusComponent';
 
 interface IRecruitmentCard {
     title: string
@@ -17,30 +15,6 @@ interface IRecruitmentCard {
 }
 
 
-interface IStatusComponentProps {
-    status: 'Đang tuyển' | 'Đã hết hạn';
-}
-
-const StatusComponent: React.FC<IStatusComponentProps> = ({ status }) => {
-    // Define styles based on the status
-    const statusStyles = status === 'Đang tuyển'
-        ? {
-            backgroundColor: 'var(--green-green-50, #E6F7E6)',
-            color: 'var(--green-green-500, #03A600)',
-        }
-        : {
-            backgroundColor: '#F7E6E6',
-            color: '#FF3939',
-        };
-
-    return (
-        <div className="custom-status" style={{ backgroundColor: statusStyles.backgroundColor }}>
-            <span className="font-roboto text-sm font-semibold" style={{ color: statusStyles.color }}>
-                {status}
-            </span>
-        </div>
-    );
-};
 
 const RecruitmentCard: React.FC<IRecruitmentCard> = ({title, position, location, date, des, status}) => {
     return (
@@ -63,7 +37,7 @@ const RecruitmentCard: React.FC<IRecruitmentCard> = ({title, position, location,
                         <span className="custom-location-recruitment font-roboto">{date}</span>
                     </div>
                 </div>
-                <StatusComponent status={status as 'Đang tuyển' | 'Đã hết hạn'} />
+                <StatusComponent size={1} status={status as 'Đang tuyển' | 'Đã hết hạn'} />
             </div>
             <div className="inline-flex h-[92px] flex-col items-start gap-2 px-5 flex-shrink-0">
                 <h2 className="font-roboto text-base font-semibold text-[#0054A6]">Mô tả công việc:</h2>

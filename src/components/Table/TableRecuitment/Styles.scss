@@ -1,0 +1,44 @@
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+.custom-table-col-first {
+    border-right: 1px solid var(--gray-gray-200, #C2C2C2);
+    color: #333333;
+    font-weight: 700;
+}
+
+.custom-table-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    border-bottom: 1px solid var(--gray-gray-200, #C2C2C2);
+}
+
+.custom-table-cell {
+    display: flex;
+    padding: 16px 36px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+}
+.list-inside-table {
+    list-style: none; /* Loại bỏ dấu chấm mặc định */
+    padding-left: 0; /* Loại bỏ padding mặc định của ul */
+
+    li {
+        position: relative;
+        padding-left: 1.5em; /* Khoảng cách để dấu chấm nằm bên trái nội dung */
+        margin-bottom: 0.5em; /* Khoảng cách giữa các mục danh sách */
+
+        &::before {
+            content: '•'; /* Dấu chấm danh sách */
+            position: absolute;
+            left: 0; /* Đặt dấu chấm bên trái */
+            color: #333; /* Màu của dấu chấm */
+            font-size: 1.2em; /* Kích thước của dấu chấm */
+            line-height: 1; /* Đặt chiều cao của dòng để căn chỉnh dấu chấm */
+        }
+    }
+}

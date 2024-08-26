@@ -1,12 +1,13 @@
 import { useState } from "react"
 import { BagIcon, LineIcon, Map, PersonCard } from "../../assets/iconpack"
 import RecruitmentCard from "../../components/Cards/RecruitmentCard/RecruitmentCard"
-import Chips from "../../components/Chips/Chips"
+import Chips from "../../components/Tag/Chips/Chips"
 import Pagination from "../../components/Pagination/Pagination"
 import Search from "../../components/Search/Search"
 import RectangleTitle from "../../components/Rectangles/RectangleTitle/RectangleTitle"
 import Layout from "../../layouts/Layout"
 import './Styles.scss'
+import RecruitmentDetail from "./RecruitmentDetail/RecruitmentDetail"
 
 const Recruitment = () => {
 
@@ -50,6 +51,7 @@ const Recruitment = () => {
                 <div className='w-full flex flex-col items-center justify-center mt-32'>
                     <RectangleTitle label="TUYỂN DỤNG" />
                 </div>
+                {/*
                 <div className="w-full h-full flex items-center justify-center">
                     <div className="w-[1520px] flex items-start gap-6">
                         <div className="w-full h-full flex items-center justify-center">
@@ -148,8 +150,8 @@ const Recruitment = () => {
                         </div>
                     </div>
                 </div>
-
-
+                */}
+                <RecruitmentDetail/>
             </Layout>
         </div>
     )

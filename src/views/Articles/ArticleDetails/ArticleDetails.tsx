@@ -1,5 +1,5 @@
 import TueNhi from "../../../assets/tuenhi/tuenhicuanguyenhuuhuan.jpg";
-import PostCard from "../../Cards/PostCard/PostCard";
+import PostCard from "../../../components/Cards/PostCard/PostCard";
 import DocumentPDF from '../../../../../TB-TuyenTTS_2024.pdf';
 import './Styles.scss';
 

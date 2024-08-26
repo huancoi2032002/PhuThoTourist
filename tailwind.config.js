@@ -18,6 +18,7 @@ export default {
       },
       lineHeight: {
         '22.4px': '22.4px',
+        normal: 'normal',
       },
       colors: {
         'bgnav': '#002F5C',
@@ -36,11 +37,13 @@ export default {
         //blue
         'blue-50': '#E6EEF7',
         'blue-300': '#6698CA',
+        'blue-400': '#3376B8',
         'blue-500': '#0054A6',
         'blue-600': '#003F7D',
 
         //gray
         'gray-50': '#F0F0F0',
+        'gray-200': '#C2C2C2',
         'gray-400': '#858585',
         'gray-500': '#666666',
         'gray-600': '#4D4D4D',
