@@ -10,7 +10,7 @@ const Navigation: React.FC = () => {
     const currentPath = location.pathname;
 
     const getLinkClassName = (path: string) => {
-        return `text-white p-3 ${currentPath === path ? 'underline text-customColor' : ''}`;
+        return `p-3 ${currentPath === path ? 'underline text-customColor' : 'text-white '}`;
     };
 
 

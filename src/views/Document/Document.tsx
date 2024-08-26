@@ -1,7 +1,11 @@
 import DatePickerComponent from "../../components/Filter/FilterDate/DateFilter";
 import Search from "../../components/Search/Search";
 import Table from "../../components/Table/Table";
-import DocumentLayout from "../../layouts/DocumentLayout/DocumentLayout";
+import { GroupDown } from "../../assets";
+import DocumentCard from "../../components/Cards/DocumentCard/DocumentCard";
+import RectangleTitle from "../../components/Rectangles/RectangleTitle/RectangleTitle";
+import TueNhi from '../../assets/tuenhi/tuenhicuahuuhuan.jpg';
+import Layout from "../../layouts/Layout";
 import './Styles.scss';
 
 const data = [
@@ -75,24 +79,56 @@ const data = [
 ];
 
 const Document = () => {
+    const handleScroll = () => {
+        const element = document.getElementById('scrollTarget');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
     return (
-        <DocumentLayout>
-            <div className="w-[1234px] h-[807px] custom-document px-[54px] py-12 flex flex-col gap-[14px]">
-                <div className="flex justify-between items-center">
-                    <div className="inline-flex flex-col items-start gap-2">
-                        <label htmlFor="" className="text-[#0054A6] font-roboto text-lg font-semibold">Ngày tạo</label>
-                        <DatePickerComponent />
-                    </div>
-                    <div className="inline-flex flex-col items-start gap-2">
-                        <label htmlFor="" className="text-[#0054A6] font-roboto text-lg font-semibold">Từ khóa</label>
-                        <Search />
-                    </div>
+        <Layout>
+            <div className='w-full flex flex-col items-center justify-center mt-32'>
+                <RectangleTitle label="TÀI LIỆU" />
+            </div>
+            <div className="inline-flex flex-col items-start gap-[22px]">
+                <div className="flex h-[261px] justify-center items-start gap-[22px]">
+                    <DocumentCard src={TueNhi} title="Báo cáo Tài Chính năm 2022-2023" />
+                    <DocumentCard src={TueNhi} title="Báo cáo Tài Chính năm 2022-2023" />
+                    <DocumentCard src={TueNhi} title="Báo cáo Tài Chính năm 2022-2023" />
+                    <DocumentCard src={TueNhi} title="Báo cáo Tài Chính năm 2022-2023" />
                 </div>
-                <div className="flex w-[1126px] items-start rounded-lg">
-                    <Table data={data} />
+                <div className="flex h-[261px] justify-center items-start gap-[22px]">
+                    <DocumentCard src={TueNhi} title="Báo cáo Tài Chính năm 2022-2023" />
+                    <DocumentCard src={TueNhi} title="Báo cáo Tài Chính năm 2022-2023" />
+                    <DocumentCard src={TueNhi} title="Báo cáo Tài Chính năm 2022-2023" />
+                    <DocumentCard src={TueNhi} title="Báo cáo Tài Chính năm 2022-2023" />
                 </div>
             </div>
-        </DocumentLayout>
+            <div className="animate-move-down cursor-pointer mb-[200px]" onClick={handleScroll}>
+                <GroupDown />
+            </div>
+            <div
+                id="scrollTarget"
+                className="w-full h-full flex items-center justify-center"
+            >
+                <div className="w-[1234px] h-[807px] custom-document px-[54px] py-12 flex flex-col gap-[14px]">
+                    <div className="flex justify-between items-center">
+                        <div className="inline-flex flex-col items-start gap-2">
+                            <label htmlFor="" className="text-[#0054A6] font-roboto text-lg font-semibold">Ngày tạo</label>
+                            <DatePickerComponent />
+                        </div>
+                        <div className="inline-flex flex-col items-start gap-2">
+                            <label htmlFor="" className="text-[#0054A6] font-roboto text-lg font-semibold">Từ khóa</label>
+                            <Search />
+                        </div>
+                    </div>
+                    <div className="flex w-[1126px] items-start rounded-lg">
+                        <Table data={data} />
+                    </div>
+                </div>
+            </div>
+
+        </Layout>
     )
 }
 

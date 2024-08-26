@@ -1,0 +1,60 @@
+@keyframes moveDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.animate-move-down:hover {
+    animation: moveDown 1s infinite ease-in-out;
+}
+
+/* Đặt cho phần tử cuộn cụ thể */
+.scroll-container {
+    height: 100vh;
+    /* Hoặc chiều cao cụ thể bạn muốn */
+    overflow-y: scroll;
+    /* Cho phép cuộn dọc */
+}
+
+/* Ẩn thanh cuộn trong Chrome, Safari và Edge */
+.scroll-container::-webkit-scrollbar {
+    width: 0;
+    /* Ẩn thanh cuộn dọc */
+}
+
+/* Ẩn thanh cuộn trong Firefox */
+.scroll-container {
+    scrollbar-width: none;
+    /* Ẩn thanh cuộn dọc */
+}
+
+.fixed-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.custom-bg-about {
+    background: rgba(255, 255, 255, 0.70);
+    backdrop-filter: blur(7.5px);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.custom-bg-service {
+    background: rgba(255, 255, 255, 0.70);
+    backdrop-filter: blur(7.5px);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-bottom: 40px;
+}
