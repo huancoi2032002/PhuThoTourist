@@ -1,20 +1,43 @@
-.custom-about-right {
-    width: 619px;
-    height: 599px;
-    position: relative;
+@media (min-width: 1280px) {
+    .custom-about-right {
+        width: 619px;
+        height: 599px;
+        position: relative;
+    }
+
+    .rectangle-1 {
+        width: 487px;
+        height: 311px;
+        position: relative;
+    }
+
+    .rectangle-2 {
+        width: 552px;
+        height: 340px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
 }
 
-.rectangle-1 {
-    width: 487px;
-    height: 311px;
-    position: relative;
-}
+@media (max-width: 768px) {
+    .custom-about-right {
+        width: 375px;
+        height: 294px;
+        position: relative;
+    }
 
-.rectangle-2 {
-    width: 552px;
-    height: 340px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    
+    .rectangle-1 {
+        width: 254px;
+        height: 162px;
+        position: relative;
+    }
+
+    .rectangle-2 {
+        width: 280px;
+        height: 172px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
 }

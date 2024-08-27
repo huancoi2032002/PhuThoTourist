@@ -18,7 +18,7 @@ const Layout: React.FC<ILayoutProps> = ({ children }) => {
             <div className="fixed-nav z-30">
                 <Navigation />
             </div>
-            <div className="flex flex-col items-center justify-center gap-8 mb-12">
+            <div className="flex flex-col items-center justify-center gap-8 xl:mb-12">
                 {children}
             </div>
             <Footer />

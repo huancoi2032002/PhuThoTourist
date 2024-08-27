@@ -80,7 +80,7 @@ const data = [
 
 const Document = () => {
     const handleScroll = () => {
-        const element = document.getElementById('scrollTarget');
+        const element = document.getElementById('scrollTargetDocument');
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
         }
@@ -108,7 +108,7 @@ const Document = () => {
                 <GroupDown />
             </div>
             <div
-                id="scrollTarget"
+                id="scrollTargetDocument"
                 className="w-full h-full flex items-center justify-center"
             >
                 <div className="w-[1234px] h-[807px] custom-document px-[54px] py-12 flex flex-col gap-[14px]">

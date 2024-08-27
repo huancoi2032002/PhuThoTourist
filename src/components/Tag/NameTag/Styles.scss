@@ -11,3 +11,13 @@
     font-weight: 600;
     line-height: normal;
 }
+@media (max-width: 768px) {
+    .custom-label-NameTag {
+        color: var(--blue-primary-500, #0054A6);
+        font-family: Roboto;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+}

@@ -8,7 +8,7 @@ type NewsCardProps = {
 }
 const NewsCard: React.FC<NewsCardProps> = ({ src, title, description }) => {
     return (
-        <div className="w-[362px] h-auto rounded-[12px] bg-white newscard-custom cursor-pointer flex-shrink-0">
+        <div className="xl:w-[362px] w-[343px] h-auto rounded-[12px] bg-white newscard-custom cursor-pointer flex-shrink-0">
             <div className="w-full h-[197px]">
                 <img src={src} className="w-full h-full object-cover rounded-t-[12px]" alt="Description" />
             </div>

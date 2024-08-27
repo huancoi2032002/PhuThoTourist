@@ -1,11 +1,11 @@
-import React from "react"
+import React from "react";
 
-type RetangleProps = {
-    width: string
-}
+type RectangleProps = {
+    width: string;
+};
 
-export const Rectangle:React.FC<RetangleProps> = ({width}) => {
-    return(
-        <div className="h-[6px] rounded-[100px] rectangle" style={{width}}></div>
-    )
-}
+export const Rectangle: React.FC<RectangleProps> = ({ width }) => {
+    return (
+        <div className={`h-[6px] rounded-[100px] rectangle ${width}`}></div>
+    );
+};

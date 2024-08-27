@@ -26,25 +26,25 @@ const HomeSlider: React.FC = () => {
 
     const renderCustomSlide = (src: string, index: number) => (
         <div className="w-full">
-            <img src={src} className="h-h-img-slider w-w-img-slider object-cover img-select" alt={`${index}`} />
+            <img src={src} className="lg:h-h-img-slider lg:w-w-img-slider h-[310px] w-[220px] object-cover img-select" alt={`${index}`} />
         </div>
     );
 
     return (
-        <div className="w-full flex items-center justify-center pt-[168px] pb-[222px] bg-headercontent">
+        <div className="w-full flex items-center justify-center  pb-[222px] bg-headercontent">
             <div className="inline-flex flex-col items-center gap-[42px] h-auto flex-shrink-0">
-                <div className="flex flex-col items-center gap-[24px]">
-                    <h2 className="text-white text-center font-philosopher text-[30px] font-bold leading-[36px] text-shadow-custom-h2">
+                <div className="flex flex-col items-center lg:gap-[24px] gap-3">
+                    <h2 className="text-white text-center font-philosopher lg:text-[30px] text-[14px] font-bold leading-[36px] text-shadow-custom-h2">
                         CÔNG TY CỔ PHẦN DỊCH VỤ DU LỊCH PHÚ THỌ
                     </h2>
-                    <h1 className="text-custom-light-blue text-shadow-custom-h1 font-helvetica text-[44px] font-bold leading-normal tracking-[1.76px]">
+                    <h1 className="text-custom-light-blue text-shadow-custom-h1 font-helvetica lg:text-[44px] text-[24px] font-bold leading-normal tracking-[1.76px]">
                         PHUTHOTOURIST
                     </h1>
-                    <p className="text-white font-helvetica text-[24px] italic font-normal leading-[36px]">
+                    <p className="text-white font-helvetica lg:text-[24px] text-[14px] italic font-normal leading-[36px]">
                         Ngày thành lập 01/01/2019
                     </p>
                 </div>
-                <div className="w-w-slides flex justify-center items-center overflow-hidden">
+                <div className="lg:w-w-slides  flex justify-center items-center overflow-hidden">
                     <ReusableSwiperSlider
                         images={images}
                         slidesPerView={5}

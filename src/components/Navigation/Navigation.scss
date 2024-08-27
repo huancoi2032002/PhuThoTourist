@@ -21,3 +21,26 @@
     text-decoration: underline;
     text-decoration-color: #99FFFF;
 }
+
+.custom-nav-mobile {
+    background: rgba(0, 37, 73, 0.80);
+    backdrop-filter: blur(9.5px);
+}
+
+.custom-toggle-close {
+    position: absolute;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    padding: 8.571px;
+    justify-content: center;
+    align-items: center;
+    gap: 7.143px;
+    flex-shrink: 0;
+    border-radius: 22.857px;
+    border: 1.429px solid #FFF;
+    background: var(--White, #FFF);
+    box-shadow: 0px 2.857px 2.857px 0px rgba(0, 0, 0, 0.25);
+    top: 5%;
+    right: 2%;
+}

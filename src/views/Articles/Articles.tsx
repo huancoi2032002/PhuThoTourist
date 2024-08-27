@@ -41,9 +41,11 @@ const Articles = () => {
     return (
 
         <Layout>
+            
             <div className='w-full flex flex-col items-center justify-center mt-32 '>
                 <RectangleTitle label="BÀI VIẾT" />
             </div>
+            {/*
             <div className="w-full flex flex-col items-center justify-center gap-6">
 
                 <div className="max-w-[1520px] w-full flex justify-between">
@@ -82,7 +84,8 @@ const Articles = () => {
                     </div>
                 </div>
             </div>
-
+            */}
+            <ArticleDetails />
         </Layout>
     );
 };

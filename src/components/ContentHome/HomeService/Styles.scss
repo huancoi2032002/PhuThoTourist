@@ -1,0 +1,9 @@
+@media (max-width: 768px) {
+
+    .custom-list-newscard{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+}

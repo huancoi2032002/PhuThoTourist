@@ -7,10 +7,10 @@ const HomeAboutRight = () => {
     return (
         <div className="custom-about-right grid">
             <div className="rectangle-1">
-                <img src={RecTangLe1} />
+                <img className="w-full h-full" src={RecTangLe1} />
             </div>
             <div className="rectangle-2">
-                <img src={RecTangLe2} />
+                <img className="w-full h-full" src={RecTangLe2} />
             </div>
         </div>
     )

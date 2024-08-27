@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { EffectCoverflow, Autoplay } from "swiper";
 import "swiper/swiper.scss";
 import "swiper/components/effect-coverflow/effect-coverflow.scss";
-import './Slider.scss';
+import './Swiper.scss';
 
 SwiperCore.use([EffectCoverflow, Autoplay]);
 
@@ -50,7 +50,7 @@ const ReusableSwiperSlider: React.FC<ReusableSwiperSliderProps> = ({
     };
 
     return (
-        <div className="w-w-slider flex items-center justify-center relative">
+        <div className="md:w-w-slider w-[699px] flex items-center justify-center relative custom-swiper">
             <Swiper
                 ref={swiperRef}
                 effect="coverflow"

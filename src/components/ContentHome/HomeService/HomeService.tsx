@@ -12,15 +12,15 @@ const HomeService:React.FC = () => {
     }
     
     return(
-        <div className="w-[1520px] flex  flex-col justify-around items-center gap-[50px] py-[40px]">
+        <div className="xl:w-[1520px] w-[375px] flex  flex-col xl:justify-around items-center gap-[50px] py-[40px]">
             <Title
                 titleHeader='LĨNH VỰC HOẠT ĐỘNG'
                 titleContent='Các dịch vụ trọng tâm'
                 description='3 dịch vụ trọng tâm của Phuthotourist là vui chơi giải trí, nhà hàng – khách sạn, và dịch vụ lữ hành'
                 textColor={textColorStyle}
-                width='220px'
+                width='xl:w-[220px] w-[80px]'
             />
-            <div className="w-full flex justify-between px-[193px]">
+            <div className="w-full flex justify-between xl:px-[193px] custom-list-newscard">
                 <NewsCard  
                     src={TueNhi1}
                     title='Vui chơi giải trí'

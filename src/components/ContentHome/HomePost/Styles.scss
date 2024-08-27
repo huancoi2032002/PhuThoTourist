@@ -2,3 +2,14 @@
     background: rgba(78, 149, 219, 0.70);
     backdrop-filter: blur(7.5px);
 }
+
+@media (max-width: 768px) {
+    .home-post{
+        padding: 15px 0px;
+    }
+    .custom-list-card-posthome{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+}

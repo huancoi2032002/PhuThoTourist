@@ -1,0 +1,32 @@
+.custom-bg-about {
+    background: rgba(255, 255, 255, 0.70);
+    backdrop-filter: blur(7.5px);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.custom-bg-service {
+    background: rgba(255, 255, 255, 0.70);
+    backdrop-filter: blur(7.5px);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+    #scrollTarget{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+@media (max-width: 768px) {
+    #scrollTarget{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .custom-bg-service{
+        margin-bottom: 0px;
+    }
+}

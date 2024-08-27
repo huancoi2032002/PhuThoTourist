@@ -18,15 +18,15 @@ const HomePost = () => {
     };
 
     return (
-        <div className="w-[1520px] h-[892px] home-post flex  flex-col justify-around items-center gap-[10px]">
+        <div className="xl:w-[1520px] xl:h-[892px] w-[375px] home-post flex flex-col xl:justify-around items-center xl:gap-[10px] gap-4">
             <Title
                 titleHeader='CHIA SẺ THÔNG TIN'
                 titleContent='Bài viết mới'
                 description='Hãy cùng chúng tôi chia sẻ những bài viết mới với các thông tin về những sản phẩm du lịch'
                 textColor={textColorStyle}
-                width='130px'
+                width="w-[56px] xl:w-[130px]"
             />
-            <div className="w-full flex justify-between px-[193px]">
+            <div className="w-full flex xl:justify-between items-center xl:px-[193px] custom-list-card-posthome">
                 <Card
                     src={TueNhi1}
                     roleName='Admin'
@@ -58,7 +58,7 @@ const HomePost = () => {
                     showDetails={true}
                 />
             </div>
-            <div className="">
+            <div className="w-[343px]">
                 <Button label='Xem thêm bài viết' type='button' />
             </div>
         </div>

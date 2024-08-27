@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout";
 import { HomeAboutLeft, HomeAboutRight, HomePost, HomeService, HomeSlider } from "../../components/ContentHome";
 import { GroupDown } from "../../assets";
+import './Styles.scss'
 
 
 const Home = () => {
@@ -14,14 +15,14 @@ const Home = () => {
     return (
         <Layout>
 
-            <div className="w-full flex flex-col items-center justify-center pt-[60px]">
-                <div className="w-full ">
+            <div className="w-full flex flex-col items-center justify-center lg:pt-[60px]">
+                <div className="w-full lg:pt-[168px] mt-[-120px]">
                     <HomeSlider />
                 </div>
-                <div className="animate-move-down cursor-pointer mb-[200px] mt-[-150px]" onClick={handleScroll}>
+                <div className="animate-move-down cursor-pointer lg:mb-[200px] mb-10 lg:mt-[-150px] mt-[-380px]" onClick={handleScroll}>
                     <GroupDown />
                 </div>
-                <div id="scrollTarget" className="w-[1520px] h-[701px] home-about flex justify-between items-center px-20 custom-bg-about">
+                <div id="scrollTarget" className="lg:w-[1520px] lg:h-[701px] home-about flex lg:justify-between items-center px-20 custom-bg-about">
                     <HomeAboutLeft />
                     <HomeAboutRight />
                 </div>
