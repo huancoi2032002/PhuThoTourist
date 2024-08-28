@@ -11,6 +11,7 @@
 }
 
 .custom-des {
+    display: block;
     overflow: hidden;
     color: var(--gray-gray-600, #4D4D4D);
     text-overflow: ellipsis;
@@ -23,13 +24,30 @@
 
 
 .custom-icon {
-    color: #3376B8; 
-    transition: color 0.3s; 
+    color: #3376B8;
+    transition: color 0.3s;
 }
 
 .custom-icon:hover {
     color: #003F7D;
 }
-.custom-img{
+
+.custom-img {
     border-top-left-radius: 20px;
+}
+
+@media (max-width: 768px) {
+    .custom-title {
+        font-size: 15px;
+    }
+    .custom-icon{
+        height: 16px;
+        width: 16px;
+    }
+    .custom-des{
+        display: none;
+    }
+    .custom-btn-slider{
+        gap: 28px;
+    }
 }

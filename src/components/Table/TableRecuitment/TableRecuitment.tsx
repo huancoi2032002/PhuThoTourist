@@ -1,21 +1,21 @@
 import React, { useEffect, useRef } from "react";
 
 import './Styles.scss'
-
+// Khởi tạo table cho trang 
 interface TableRow {
     title: string;
-    content: string | React.ReactNode;
+    content: string | React.ReactNode;// Nội dung Table có thể là string hoặt Một component nào đó ví dụ như component JobDescription
 }
 
 interface CustomTableProps {
-    data: TableRow[];
+    data: TableRow[]; //Mảng dữ liệu Table
 }
 const CustomTable: React.FC<CustomTableProps> = ({ data }) => {
     return (
         <div className="custom-table">
             {data.map((row, index) => (
                 <div className="custom-table-row" key={index}>
-                    <div className="custom-table-cell custom-table-col-first">{row.title}</div>
+                    <div className="custom-table-cell custom-table-col-first text-center">{row.title}</div>
                     <div className="custom-table-cell">{row.content}</div>
                 </div>
             ))}
@@ -72,7 +72,7 @@ const Profile = () => {
         </div>
     )
 }
-const data = [
+const data = [ // đây là dữ liệu của table
     { title: 'Vị trí', content: 'Nhân viên thiết kế đồ họa' },
     { title: 'Số lượng', content: '02 người' },
     { title: 'Địa chỉ làm việc', content: 'Công viên văn hóa Đầm Sen' },

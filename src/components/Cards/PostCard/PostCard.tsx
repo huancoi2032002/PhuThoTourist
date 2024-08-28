@@ -6,12 +6,12 @@ import './Styles.scss'
 
 const PostCard: React.FC<TypeCard> = ({ src, title, roleName, view, day }) => {
     return (
-        <div className="w-[265px] h-[292px] custom-postcard flex pb-[10px] flex-col items-center gap-3 overflow-hidden flex-shrink-0" >
-            <div className="w-[265px] h-[146px] image-container">
+        <div className="xl:w-[265px] w-[343px] xl:h-[292px] h-[402px] custom-postcard flex xl:pb-[10px] pb-3 flex-col items-center  xl:gap-3 gap-2  overflow-hidden flex-shrink-0" >
+            <div className="xl:w-[265px] w-[343px] xl:h-[146px] h-[190px] image-container">
                 <img src={src} className="w-full h-full object-cover" alt="Description" />
                 <div className="overlay">Click để xem</div> {/* Thêm lớp overlay */}
             </div>
-            <div className="flex flex-col items-start gap-2 flex-shrink-0 ">
+            <div className="flex flex-col items-start xl:gap-2 gap-3 flex-shrink-0 custom-des-postcard">
                 <div className="flex items-center gap-1">
                     <span className="custom-span-admin-postcard font-roboto">{roleName}</span>
                     <EllipseIcon className="custom-fill-action" />

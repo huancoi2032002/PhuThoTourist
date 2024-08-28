@@ -7,7 +7,7 @@ import './Styles.scss';
 import TableRecuitment from "../../../components/Table/TableRecuitment/TableRecuitment";
 
 
-
+//Đây là trang chi tiết tuyển dụng
 
 const RecruitmentDetail = () => {
     return (

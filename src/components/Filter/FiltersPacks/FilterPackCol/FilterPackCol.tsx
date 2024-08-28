@@ -7,6 +7,7 @@ type FilterPackProps = {
     icon: ReactNode;
     selected?: boolean;
     onClick?: () => void;
+
 };
 
 const sidebarItems = [
@@ -39,7 +40,7 @@ const sidebarItems = [
 const FilterPack: React.FC<FilterPackProps> = ({ label, icon, selected = false, onClick }) => {
     return (
         <div
-            className={`flex w-[322px] p-5 items-center gap-3 rounded-lg cursor-pointer filterpack-custom 
+            className={`flex 2xl:w-[322px] w-[302px] 2xl:p-5 p-3 items-center gap-3 rounded-lg cursor-pointer filterpack-custom 
                 ${selected ? 'bg-[#0054A6] text-white hover:text-white' : 'bg-[#FFF] text-[#6698CA] hover:text-blue-500'}`
             }
             onClick={onClick}
@@ -55,8 +56,10 @@ const FilterPack: React.FC<FilterPackProps> = ({ label, icon, selected = false, 
         </div>
     );
 };
-
-const FilterPackCol = () => {
+interface IFilterPack {
+    className?: string
+}
+const FilterPackCol:React.FC<IFilterPack> = ({className}) => {
     const [selectedLabels, setSelectedLabels] = useState<string[]>([]);
 
     const handleItemClick = (label: string) => {
@@ -70,7 +73,7 @@ const FilterPackCol = () => {
     };
 
     return (
-        <div className="w-[362px] h-[1028px] custom-bg-filterpackcol flex-shrink-0 p-5">
+        <div className={`2xl:w-[362px] h-[1028px] custom-bg-filterpackcol flex-shrink-0 p-5 ${className}`}>
             <div className="px-6 flex items-center justify-center pb-4">
                 <span className="custom-title-packs font-philosopher">Chủ đề bài viết</span>
             </div>

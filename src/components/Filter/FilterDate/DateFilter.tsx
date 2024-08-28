@@ -38,8 +38,8 @@ const DatePickerComponent: FC = () => {
     };
 
     return (
-        <div className="w-auto h-auto inline-flex flex-col justify-center items-center gap-2">
-            <div className="w-[322px] h-full flex items-center gap-2">
+        <div className="w-auto h-auto inline-flex flex-col justify-center items-center gap-2 custom-filterdate">
+            <div className="w-[322px] h-full flex items-center gap-2 ">
                 <div
                     className="w-[150px] flex justify-between items-center px-3 py-2 self-stretch bg-[#FFF] rounded-md flex-shrink-0 cursor-pointer"
                     onClick={toggleDateRangePicker}

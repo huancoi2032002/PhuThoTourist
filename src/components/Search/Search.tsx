@@ -17,10 +17,10 @@ const Search: React.FC = () => {
     };
 
     return (
-        <div className="flex w-[314px] h-10 gap-2 flex-col flex-shrink-0 rounded-md">
-            <div className="w-full h-10 flex py-4 px-[10px] justify-between items-center self-stretch rounded-md bg-[#FFF] flex-shrink-0">
-                <div className="flex pr-3 items-start gap-[10px]">
-                    <SearchIcon className="cursor-pointer" />
+        <div className="flex xl:w-[314px] w-[231px] xl:h-10 h-9 gap-2 flex-col flex-shrink-0 rounded-md">
+            <div className="w-full xl:h-10 h-9 flex py-4 px-[10px] justify-between items-center self-stretch rounded-md bg-[#FFF] flex-shrink-0">
+                <div className="flex items-start xl:gap-[10px] gap-2">
+                    <SearchIcon className="cursor-pointer custom-icon-search" />
                     <input
                         type="text"
                         placeholder="Tìm kiếm"

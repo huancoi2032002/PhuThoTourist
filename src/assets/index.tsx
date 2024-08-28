@@ -83,8 +83,8 @@ export const NextIcon = ({ className }: SvgProps) => (
     </svg>
 );
 
-export const CircleIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+export const CircleIcon:React.FC<SvgProps> = ({className}) => (
+    <svg className={className} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
         <g filter="url(#filter0_b_5884_980)">
             <circle cx="8" cy="8" r="8" fill="white" fillOpacity="0.3" />
             <circle cx="8" cy="8" r="7.5" stroke="#0054A6" />
@@ -198,3 +198,4 @@ export const Close = () => (
         <path d="M3.28571 3.28577L14.7143 14.7143M14.7143 3.28577L3.28571 14.7143" stroke="#0054A6" stroke-width="2.85714" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
 )
+

@@ -7,7 +7,7 @@ interface IStatusComponentProps {
 
 const StatusComponent: React.FC<IStatusComponentProps> = ({ status, size }) => {
     let selection;
-    switch (size) {
+    switch (size) { // đây là lựa chọn size tùy theo trang yêu cầu
         case 1:
             selection = '8px 12px';
             break;

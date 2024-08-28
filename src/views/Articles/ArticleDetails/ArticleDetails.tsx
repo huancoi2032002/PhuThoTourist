@@ -3,7 +3,7 @@ import PostCard from "../../../components/Cards/PostCard/PostCard";
 import DocumentPDF from '../../../../../TB-TuyenTTS_2024.pdf';
 import './Styles.scss';
 
-
+// Đây là page chi tiết bài viết, em bị nhầm ạ
 const pdfjsVersion = '4.4.168';
 
 const ArticleDetails = () => {

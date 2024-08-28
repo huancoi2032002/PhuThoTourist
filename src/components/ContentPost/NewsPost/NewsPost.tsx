@@ -8,7 +8,7 @@ import './Styles.scss'
 
 const MiniTag: React.FC<TypeCard> = ({ view, day, src, title }) => {
     return (
-        <div className="w-[314px] h-[102px] flex bg-white rounded-[4px] custom-minitag flex-shrink-0 gap-[12px] overflow-hidden">
+        <div className="xl:w-[314px] w-[304px] h-[102px] flex bg-white rounded-[4px] custom-minitag flex-shrink-0 gap-[12px] overflow-hidden">
             <div className="w-[104px] h-[102px] flex-shrink-0">
                 <img src={src} className="w-full h-full object-cover" />
             </div>
@@ -28,7 +28,7 @@ const MiniTag: React.FC<TypeCard> = ({ view, day, src, title }) => {
 
 const NewsPost = () => {
     return (
-        <div className="h-[603px] w-[362px] flex flex-col p-[24px] custom-bg-newspost rounded-[8px]">
+        <div className="h-[603px] xl:w-[362px] flex flex-col p-[20px] custom-bg-newspost rounded-[8px]">
             <div className="pb-[16px]">
                 <h2 className="font-roboto text-[24px] font-bold text-[#0054A6]">Bài mới nhất</h2>
             </div>

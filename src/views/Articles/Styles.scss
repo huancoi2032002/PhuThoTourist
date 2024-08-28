@@ -3,3 +3,26 @@
 
     backdrop-filter: blur(7.5px);
 }
+
+
+
+@media (max-width: 768px) {
+    .custom-content-article{
+        margin-bottom: 20px;
+    }
+    .custom-slider-article{
+        align-items: center;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .custom-filterpackcol-article{
+        display: none;
+    }
+    .article-filterpackrow{
+        display: none !important;
+    }
+    .custom-list-postcard{
+        flex-direction: column;
+        gap: 12px;
+    }
+}

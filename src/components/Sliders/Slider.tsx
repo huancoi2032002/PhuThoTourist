@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CircleIcon, LogoDotIcon, NextIcon, PrevIcon } from '../../assets';
 import TueNhi from '../../assets/tuenhi/tuenhi1.jpg';
 import TueNhi1 from '../../assets/tuenhi/tuenhi2.jpg';
@@ -54,10 +54,17 @@ const SliderComponent: React.FC = () => {
             setIsAnimating(false);
         }, 300);
     };
+    useEffect(() => {
+        const interval = setInterval(() => {
+            handleNextClick();
+        }, 2000); // Tự động chuyển slide sau mỗi 5 giây
+
+        return () => clearInterval(interval); // Dọn dẹp interval khi component bị unmount
+    }, [isAnimating]);
 
     return (
-        <div className="max-w-[1134px] w-full max-h-[604px] h-full flex-shrink-0 bg-[#FFF] rounded-[20px] overflow-hidden">
-            <div className="w-full h-[386px] overflow-hidden">
+        <div className="2xl:max-w-[1134px] 2xl:max-h-[604px] xl:w-[1110px] w-[343px]  xl:h-full h-[199px] flex-shrink-0 bg-[#FFF] xl:rounded-[20px] rounded-[4px] overflow-hidden">
+            <div className="w-full xl:h-[386px] h-[132px] overflow-hidden">
                 <div
                     className="w-full h-full transition-transform duration-300 ease-in-out "
                     style={{
@@ -76,32 +83,32 @@ const SliderComponent: React.FC = () => {
                     ))}
                 </div>
             </div>
-            <div className="w-full flex justify-between p-[20px]">
-                <div className="w-[845px] flex flex-col items-start gap-[24px] custom-detail">
+            <div className="xl:w-full flex justify-between xl:p-[20px] p-2">
+                <div className="xl:w-[845px] w-[256px]  flex flex-col items-start gap-[24px] custom-detail">
                     <h1 className="font-philosopher font-bold leading-trim-both text-edge-cap custom-title">
                         {slides[currentSlide].title}
                     </h1>
-                    <p className="w-full font-roboto custom-des line-clamp-2">
+                    <p className="w-full font-roboto custom-des line-clamp-2 hidden md:block">
                         {slides[currentSlide].description}
                     </p>
                 </div>
-                <div className="flex flex-col justify-between items-end">
+                <div className="flex flex-col h-full justify-between items-end custom-btn-slider">
                     <div className="inline-flex items-start gap-[4px]">
                         <div className="cursor-pointer" onClick={handlePrevClick}>
-                            <PrevIcon className="custom-icon"/>
+                            <PrevIcon className="custom-icon" />
                         </div>
                         <div className="cursor-pointer" onClick={handleNextClick}>
                             <NextIcon className="custom-icon" />
                         </div>
                     </div>
-                    <div className="inline-flex gap-[12px]">
+                    <div className="inline-flex xl:gap-[12px] gap-[4px]">
                         {slides.map((_, index) => (
                             <div
                                 key={index}
                                 className={`cursor-pointer ${index === currentSlide ? 'z-99' : ''}`}
                                 onClick={() => setCurrentSlide(index)}
                             >
-                                {index === currentSlide ? <LogoDotIcon className='' /> : <CircleIcon />}
+                                {index === currentSlide ? <LogoDotIcon className='w-4 h-2' /> : <CircleIcon className='size-2' />}
                             </div>
                         ))}
                     </div>

@@ -3,10 +3,12 @@ import './Styles.scss';
 import Search from "../../../Search/Search";
 import FilterDate from "../../../Filter/FilterDate/DateFilter";
 import FilterSort from "../../FilterSort/FilterSort";
-
-const FilterPackRow = () => {
+export interface IFilterPackRow{
+    className: string
+}
+const FilterPackRow:React.FC<IFilterPackRow> = ({className}) => {
     return (
-        <div className="w-[1134px] h-20 flex-shrink-0 flex justify-between custom-filterpackrow p-5">
+        <div className={`w-[1134px] h-20 flex-shrink-0 flex justify-between custom-filterpackrow p-5 ${className}`}>
            <Search />
            <div className="h-full flex gap-4">
                 <FilterDate />
