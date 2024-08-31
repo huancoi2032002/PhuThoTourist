@@ -7,6 +7,9 @@ import RectangleTitle from "../../components/Rectangles/RectangleTitle/Rectangle
 import TueNhi from '../../assets/tuenhi/tuenhicuahuuhuan.jpg';
 import Layout from "../../layouts/Layout";
 import './Styles.scss';
+import { useEffect, useState } from "react";
+import { VueSetting } from "../../assets/iconpack";
+import NewsDocumentCard from "../../components/Cards/NewsDocumentCard/NewsDocumentCard";
 
 const data = [
     { stt: 1, name: 'Tài liệu 1', date: '01/01/2023', download: '/download1' },
@@ -77,41 +80,67 @@ const data = [
 
     // Thêm dữ liệu khác nếu cần
 ];
-
+const documents = [
+    { src: TueNhi, title: "Báo cáo Tài Chính năm 2022-2023" },
+    { src: TueNhi, title: "Báo cáo Tài Chính năm 2022-2023" },
+    { src: TueNhi, title: "Báo cáo Tài Chính năm 2022-2023" },
+    { src: TueNhi, title: "Báo cáo Tài Chính năm 2022-2023" },
+    { src: TueNhi, title: "Báo cáo Tài Chính năm 2022-2023" } // Thêm tài liệu nếu cần
+];
 const Document = () => {
+    const [currentDocumentCard, setCurrentDocumentCard] = useState(4);
     const handleScroll = () => {
         const element = document.getElementById('scrollTargetDocument');
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
         }
     };
+    useEffect(() => {
+        const updateItemsCard = () => {
+            if (window.innerWidth < 768) {
+                setCurrentDocumentCard(3);
+            } else {
+                setCurrentDocumentCard(4);
+            }
+        }
+        updateItemsCard()
+        window.addEventListener('resize', updateItemsCard)
+
+        return () => window.removeEventListener('resize', updateItemsCard)
+
+    }, [])
     return (
         <Layout>
             <div className='w-full flex flex-col items-center justify-center mt-32'>
                 <RectangleTitle label="TÀI LIỆU" />
             </div>
             <div className="inline-flex flex-col items-start gap-[22px]">
-                <div className="flex h-[261px] justify-center items-start gap-[22px]">
-                    <DocumentCard src={TueNhi} title="Báo cáo Tài Chính năm 2022-2023" />
-                    <DocumentCard src={TueNhi} title="Báo cáo Tài Chính năm 2022-2023" />
-                    <DocumentCard src={TueNhi} title="Báo cáo Tài Chính năm 2022-2023" />
-                    <DocumentCard src={TueNhi} title="Báo cáo Tài Chính năm 2022-2023" />
+                <div className="flex xl:h-[261px] xl:justify-center xl:items-start xl:gap-[22px] custom-frame-card-document">
+                    {documents.slice(0, currentDocumentCard).map((doc, index) => (
+                        <DocumentCard key={index} src={doc.src} title={doc.title} />
+                    ))}
                 </div>
-                <div className="flex h-[261px] justify-center items-start gap-[22px]">
-                    <DocumentCard src={TueNhi} title="Báo cáo Tài Chính năm 2022-2023" />
-                    <DocumentCard src={TueNhi} title="Báo cáo Tài Chính năm 2022-2023" />
-                    <DocumentCard src={TueNhi} title="Báo cáo Tài Chính năm 2022-2023" />
-                    <DocumentCard src={TueNhi} title="Báo cáo Tài Chính năm 2022-2023" />
+                <div className="flex xl:h-[261px] xl:justify-center xl:items-start xl:gap-[22px] custom-frame-card-document">
+                    {documents.slice(0, currentDocumentCard).map((doc, index) => (
+                        <DocumentCard key={index} src={doc.src} title={doc.title} />
+                    ))}
                 </div>
+
             </div>
-            <div className="animate-move-down cursor-pointer mb-[200px]" onClick={handleScroll}>
+            <div className="animate-move-down cursor-pointer xl:mb-[200px] mt-[10px] mb-[40px]" onClick={handleScroll}>
                 <GroupDown />
+            </div>
+            <div className="flex items-center gap-2 rounded-xl p-3 custom-filterpackrowmobile">
+                <Search width="276px" />
+                <div className="custom-vuesetting">
+                    <VueSetting />
+                </div>
             </div>
             <div
                 id="scrollTargetDocument"
                 className="w-full h-full flex items-center justify-center"
             >
-                <div className="w-[1234px] h-[807px] custom-document px-[54px] py-12 flex flex-col gap-[14px]">
+                <div className="xl:w-[1234px] xl:h-[807px] custom-document xl:px-[54px] xl:py-12 flex xl:flex-col xl:gap-[14px] rounded-[20px]">
                     <div className="flex justify-between items-center">
                         <div className="inline-flex flex-col items-start gap-2">
                             <label htmlFor="" className="text-[#0054A6] font-roboto text-lg font-semibold">Ngày tạo</label>
@@ -119,13 +148,19 @@ const Document = () => {
                         </div>
                         <div className="inline-flex flex-col items-start gap-2">
                             <label htmlFor="" className="text-[#0054A6] font-roboto text-lg font-semibold">Từ khóa</label>
-                            <Search />
+                            <Search width="314px" />
                         </div>
                     </div>
-                    <div className="flex w-[1126px] items-start rounded-lg">
+                    <div className="flex xl:w-[1126px] items-start rounded-lg">
                         <Table data={data} />
                     </div>
+
                 </div>
+
+                <div className="custom-newsdocument-card">
+                    <NewsDocumentCard data={data} />
+                </div>
+
             </div>
 
         </Layout>

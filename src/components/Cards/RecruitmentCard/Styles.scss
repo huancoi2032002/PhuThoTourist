@@ -36,3 +36,12 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+@media (max-width: 768px) {
+    .custom-title-recruitment{
+        font-size: 14px;
+    }
+    .custom-location-recruitment{
+        font-size: 12px;
+    }
+}

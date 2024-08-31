@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ArrowLeft, ArrowRight } from '../../assets'; // Import các icon từ file khác
 
 interface PaginationProps {
@@ -8,11 +8,36 @@ interface PaginationProps {
 }
 
 const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
+    const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 768);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsWideScreen(window.innerWidth > 768);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const pageNumbers = () => {
         const pages: (number | string)[] = [];
-        for (let i = 1; i <= totalPages; i++) {
-            pages.push(i);
+
+        if (isWideScreen) {
+            // Display all pages
+            for (let i = 1; i <= totalPages; i++) {
+                pages.push(i);
+            }
+        } else {
+            // Display a limited number of pages with ellipsis
+            if (currentPage <= 2) {
+                pages.push(1, 2, 3, 4, '...');
+            } else if (currentPage >= totalPages - 1) {
+                pages.push('...', totalPages - 3, totalPages - 2, totalPages - 1, totalPages);
+            } else {
+                pages.push(currentPage - 1, currentPage, currentPage + 1, '...', totalPages);
+            }
         }
+
         return pages;
     };
 

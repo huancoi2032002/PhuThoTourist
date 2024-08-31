@@ -42,10 +42,17 @@
         flex-direction: column;
         height: auto;
         padding: 30px 0px;
+        gap: 30px;
     }
     .custom-logo-footer {
         width: 84.253px;
         height: 53.707px;
         flex-shrink: 0;
+    }
+    .custom-copyright-primary{
+        display: none !important;
+    }
+    .custom-copyright{
+        display: block;
     }
 }

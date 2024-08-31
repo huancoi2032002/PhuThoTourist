@@ -24,3 +24,8 @@
     text-transform: uppercase;
     top: -10px;
 }
+@media (max-width: 768px) {
+    .custom-title-rec{
+        font-size: 26px;
+    }
+}

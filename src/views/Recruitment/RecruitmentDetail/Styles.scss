@@ -12,3 +12,26 @@
     font-style: normal;
     font-weight: 700;
 }
+
+@media (max-width: 768px) {
+    .custom-title-recruit {
+        color: var(--blue-primary-600, #003F7D);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 20px;
+    }
+    .custom-position-date{
+        flex-direction: column;
+        font-size: 12px;
+    }
+    .custom-status-recruit{
+        display: none !important;
+    }
+    .custom-detail-mobile{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

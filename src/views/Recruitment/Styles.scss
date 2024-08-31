@@ -20,3 +20,11 @@
     background: rgba(255, 255, 255, 0.70);
     backdrop-filter: blur(7.5px);
 }
+@media (max-width: 768px){
+    .custom-recruitment-packs{
+        display: none !important;
+    }
+    .custom-list-recruitcard{
+        width: 343px;
+    }
+}

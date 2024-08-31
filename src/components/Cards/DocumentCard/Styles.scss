@@ -23,3 +23,9 @@
 .custom-document-card:hover .overlay {
     opacity: 1;
 }
+@media (max-width: 768px){
+    .custom-icon-file{
+        width: 60px;
+        height: 60px;
+    }
+}

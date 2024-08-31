@@ -40,8 +40,8 @@ export const LogoRecruitment: React.FC<SvgProps> = ({ className }) => (
 )
 
 
-export const LogoRecruitmentXL = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="133" height="133" viewBox="0 0 133 133" fill="none">
+export const LogoRecruitmentXL:React.FC<SvgProps> = ({ className })  => (
+    <svg className={className} xmlns="http://www.w3.org/2000/svg" width="133" height="133" viewBox="0 0 133 133" fill="none">
         <g filter="url(#filter0_d_272_66446)">
             <rect x="15" y="15" width="100" height="100" rx="50" fill="#9FD18B" />
             <rect x="13.3193" y="13.3193" width="103.361" height="103.361" rx="51.6807" stroke="white" strokeWidth="3.36134" />

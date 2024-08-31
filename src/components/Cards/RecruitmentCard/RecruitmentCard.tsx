@@ -18,7 +18,7 @@ interface IRecruitmentCard {
 
 const RecruitmentCard: React.FC<IRecruitmentCard> = ({title, position, location, date, des, status}) => {
     return (
-        <div className="w-[362px] h-[296px] bg-white rounded-xl flex flex-col justify-between flex-shrink-0">
+        <div className="xl:w-[362px] w-[343px] xl:h-[296px] h-[276px] bg-white rounded-xl flex flex-col justify-between flex-shrink-0">
             <div className="inline-flex items-center gap-3">
                 <LogoRecruitment />
                 <div className="flex flex-col items-start font-roboto gap-2">
@@ -40,7 +40,7 @@ const RecruitmentCard: React.FC<IRecruitmentCard> = ({title, position, location,
                 <StatusComponent size={1} status={status as 'Đang tuyển' | 'Đã hết hạn'} />
             </div>
             <div className="inline-flex h-[92px] flex-col items-start gap-2 px-5 flex-shrink-0">
-                <h2 className="font-roboto text-base font-semibold text-[#0054A6]">Mô tả công việc:</h2>
+                <h2 className="font-roboto xl:text-base text-sm font-semibold text-[#0054A6]">Mô tả công việc:</h2>
                 <p className="custom-des-recruitment font-roboto">{des}</p>
             </div>
             <div className="px-5 pb-5">

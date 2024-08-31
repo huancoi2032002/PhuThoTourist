@@ -28,7 +28,7 @@ const Footer = () => {
                         <h3 className="text-[#9FF] xl:text-[33.5px] text-[font-size: 21.121px;]">PHUTHOTOURIST</h3>
                     </div>
                 </div>
-                <div className="w-full flex justify-center items-center gap-[5px] font-roboto text-[13px] text-[#FFF]">
+                <div className="w-full flex justify-center items-center gap-[5px] font-roboto text-[13px] text-[#FFF] custom-copyright-primary">
                     <p>Copyright</p>
                     <CopyIcon />
                     <p>Công ty Cổ phần Dịch vụ Du lịch Phú Thọ (Phuthotourist)</p>
@@ -66,6 +66,11 @@ const Footer = () => {
                     <ListLink label="Trung tâm Du lịch Đầm Sen" link="" />
                 </div>
 
+            </div>
+            <div className="w-[307px] flex justify-center gap-[5px] font-roboto text-[13px] text-[#FFF] custom-copyright lg:hidden">
+                    <p>Copyright</p>
+                    <CopyIcon />
+                    <p>Công ty Cổ phần Dịch vụ Du lịch Phú Thọ (Phuthotourist)</p>
             </div>
         </div>
     )

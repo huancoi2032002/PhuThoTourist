@@ -20,9 +20,9 @@ const Articles = () => {
 
     useEffect(() => {
         const updateItemsPerPage = () => {
-            if(window.innerWidth < 768){
+            if (window.innerWidth < 768) {
                 setItemsPerPage(5);
-            }else{
+            } else {
                 setItemsPerPage(12);
             }
         }
@@ -30,7 +30,7 @@ const Articles = () => {
         window.addEventListener('resize', updateItemsPerPage)
         return () => window.removeEventListener('resize', updateItemsPerPage)
     }, [])
-    
+
 
     // Dữ liệu mô phỏng, thay thế bằng dữ liệu thực tế của bạn
     const postCards = Array.from({ length: totalItems }, (_, index) => ({
@@ -55,7 +55,9 @@ const Articles = () => {
 
     return (
         //Do em chưa làm router cho nó 
+
         <Layout>
+            {/*
             <div className='w-full flex flex-col items-center justify-center mt-32 '>
                 <RectangleTitle label="BÀI VIẾT" />
             </div>
@@ -98,8 +100,9 @@ const Articles = () => {
                     </div>
                 </div>
             </div>
-            {/*<ArticleDetails />*/}
-        </Layout>
+             */}
+            < ArticleDetails />
+        </Layout >
     );
 };
 

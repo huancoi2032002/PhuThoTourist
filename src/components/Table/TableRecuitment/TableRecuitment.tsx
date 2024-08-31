@@ -88,7 +88,7 @@ const data = [ // đây là dữ liệu của table
 const TableRecuitment = () => {
 
     return (
-        <div className="w-[1200px] flex items-stretch">
+        <div className="xl:w-[1200px] w-[311px] flex items-stretch">
             <CustomTable data={data} />
         </div>
     );

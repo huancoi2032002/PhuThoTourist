@@ -41,7 +41,48 @@
     font-weight: 600;
     line-height: 36px;
 }
-.list-inside-des{
+
+.list-inside-des {
     list-style-position: inside;
     list-style-type: disc;
+}
+
+@media (max-width: 768px) {
+
+    .custom-articledetail {
+        display: flex;
+        width: 343px;
+        padding: 16px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .custom-title-articledetail {
+        color: var(--blue-primary-600, #003F7D);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 20px;
+        /* 142.857% */
+    }
+
+    .custom-author-articledetail {
+        font-size: 12px;
+        line-height: normal;
+    }
+
+    .custom-des-article {
+        font-size: 12px;
+    }
+
+    .custom-title-post-detail {
+        color: var(--blue-primary-500, #0054A6);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    .custom-list-postcard{
+        display: none !important;
+    }
 }

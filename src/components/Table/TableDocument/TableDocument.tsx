@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { DownloadIcon } from "../../../assets";
-import { ArrowLeft, ArrowRight } from "../../../assets";
 import Pagination from "../../Pagination/Pagination";
 
 // Định nghĩa kiểu dữ liệu cho hàng bảng
-interface DataItem {
+export interface DataItem {
     stt: number;
     name: string;
     date: string;
@@ -19,7 +18,7 @@ interface TableProps {
 // Component để hiển thị tiêu đề của các cột
 export const Columns: React.FC<{ title: string }> = ({ title }) => {
     return (
-        <div className="w-full h-[44px] font-semibold bg-[#0054A6] px-6 py-3 flex items-center">
+        <div className="w-full h-[44px] font-semibold bg-[#0054A6] px-6 py-3 flex items-center hidden lg:block">
             <span className="font-roboto text-lg text-white">{title}</span>
         </div>
     );

@@ -6,7 +6,7 @@ import './Styles.scss'
 
 
 
-const MiniTag: React.FC<TypeCard> = ({ view, day, src, title }) => {
+export const MiniTag: React.FC<TypeCard> = ({ view, day, src, title }) => {
     return (
         <div className="xl:w-[314px] w-[304px] h-[102px] flex bg-white rounded-[4px] custom-minitag flex-shrink-0 gap-[12px] overflow-hidden">
             <div className="w-[104px] h-[102px] flex-shrink-0">

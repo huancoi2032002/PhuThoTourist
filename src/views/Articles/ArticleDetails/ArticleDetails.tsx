@@ -2,6 +2,8 @@ import TueNhi from "../../../assets/tuenhi/tuenhicuanguyenhuuhuan.jpg";
 import PostCard from "../../../components/Cards/PostCard/PostCard";
 import DocumentPDF from '../../../../../TB-TuyenTTS_2024.pdf';
 import './Styles.scss';
+import NewsPost from "../../../components/ContentPost/NewsPost/NewsPost";
+import { MiniTag } from "../../../components/ContentPost/NewsPost/NewsPost";
 
 // Đây là page chi tiết bài viết, em bị nhầm ạ
 const pdfjsVersion = '4.4.168';
@@ -9,17 +11,17 @@ const pdfjsVersion = '4.4.168';
 const ArticleDetails = () => {
     const fileUrl = '../../../';
     return (
-        <div className="flex p-12 flex-col items-start gap-12 custom-articledetail">
-            <div className="w-[1152px] h-[101px] flex pr-[38px] flex-col justify-center items-start gap-[2px]">
-                <h1 className="w-[1214px] h-[80px] custom-title-articledetail font-roboto">Kết quả đấu giá giữ xe tại CVVH Đầm Sen 2022</h1>
+        <div className="flex xl:p-12 flex-col items-start xl:gap-12 custom-articledetail mt-20 mb-10">
+            <div className="xl:w-[1152px] xl:h-[101px] flex xl:pr-[38px] flex-col justify-center items-start gap-[2px]">
+                <h1 className="xl:w-[1214px] xl:h-[80px] custom-title-articledetail font-roboto">Kết quả đấu giá giữ xe tại CVVH Đầm Sen 2022</h1>
                 <p className="flex justify-center custom-author-articledetail font-roboto">by tuyendung in on Tháng Năm 21, 2020</p>
             </div>
             <div className="flex flex-col items-center gap-8">
-                <div className="w-[1152px] h-[688px] rounded-[4px]">
+                <div className="xl:w-[1152px] w-[311px] xl:h-[688px] h-[183px] rounded-[4px]">
                     <img src={TueNhi} alt="" className="w-full h-full object-cover" />
                 </div>
                 <div className="w-full flex flex-col items-start gap-4">
-                    <div className="w-[1152px] flex flex-col gap-3 custom-des-article">
+                    <div className="xl:w-[1152px] flex flex-col gap-3 custom-des-article">
                         <p>
                             Công ty Cổ phần Dịch vụ Du lịch Phú Thọ xin thông báo đến các đơn vị tham gia đấu giá cạnh tranh hạng mục “Hợp tác giữ xe 02 – 04 bánh tại Công viên văn hóa Đầm Sen (Số 03 Hòa Bình, Phường 03, Quận 11, TP.HCM), kết quả như sau.
                         </p>
@@ -59,11 +61,17 @@ const ArticleDetails = () => {
 
             <div className="flex flex-col items-start gap-4">
                 <h1 className="font-roboto custom-title-post-detail">Bài viết liên quan</h1>
-                <div className="w-[1152px] h-[292px] flex justify-between items-start">
+                <div className="w-[1152px] h-[292px] flex justify-between items-start custom-list-postcard">
                     <PostCard src={TueNhi} title="Thông báo: đấu giá giữ xe tại CVHH Đầm Sen" roleName="Admin" day="20/02/2022" view={10000} />
                     <PostCard src={TueNhi} title="Thông báo: đấu giá giữ xe tại CVHH Đầm Sen" roleName="Admin" day="20/02/2022" view={10000} />
                     <PostCard src={TueNhi} title="Thông báo: đấu giá giữ xe tại CVHH Đầm Sen" roleName="Admin" day="20/02/2022" view={10000} />
                     <PostCard src={TueNhi} title="Thông báo: đấu giá giữ xe tại CVHH Đầm Sen" roleName="Admin" day="20/02/2022" view={10000} />
+                </div>
+                <div className="flex flex-col items-start gap-3">
+                    <MiniTag day="24/08/20024" view={10000} title="Thông báo đấu giá giữ xe tại CVHH Đầm Sen" src={TueNhi} />
+                    <MiniTag day="24/08/20024" view={20000} title="Thông báo đấu giá giữ xe tại CVHH Đầm Sen" src={TueNhi} />
+                    <MiniTag day="24/08/20024" view={30000} title="Thông báo đấu giá giữ xe tại CVHH Đầm Sen" src={TueNhi} />
+                    <MiniTag day="24/08/20024" view={40000} title="Thông báo đấu giá giữ xe tại CVHH Đầm Sen" src={TueNhi} />
                 </div>
             </div>
         </div>

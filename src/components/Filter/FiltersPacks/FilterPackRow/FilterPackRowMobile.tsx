@@ -9,7 +9,7 @@ import { IFilterPackRow } from "./FilterPackRow";
 const FilterPackRowMobile:React.FC<IFilterPackRow> = ({className}) => {
     return (
         <div className={`flex items-center gap-2 custom-filterpackrowmobile p-3 ${className}`}>
-            <Search />
+            <Search width="231px" />
             <FilterSort />
             <div className="custom-vuesetting">
                 <VueSetting />
