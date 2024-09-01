@@ -98,9 +98,9 @@ const Document = () => {
     useEffect(() => {
         const updateItemsCard = () => {
             if (window.innerWidth < 768) {
-                setCurrentDocumentCard(3);
+                setCurrentDocumentCard(3); // Nếu trang nhỏ hơn 768px thì hiển thị 3 DocumentCard
             } else {
-                setCurrentDocumentCard(4);
+                setCurrentDocumentCard(4); // Còn màn hình lớn hơn là 4
             }
         }
         updateItemsCard()
@@ -130,7 +130,7 @@ const Document = () => {
             <div className="animate-move-down cursor-pointer xl:mb-[200px] mt-[10px] mb-[40px]" onClick={handleScroll}>
                 <GroupDown />
             </div>
-            <div className="flex items-center gap-2 rounded-xl p-3 custom-filterpackrowmobile">
+            <div className="flex items-center gap-2 rounded-xl p-3 custom-filterpackrowmobile lg:hidden">
                 <Search width="276px" />
                 <div className="custom-vuesetting">
                     <VueSetting />
@@ -157,7 +157,7 @@ const Document = () => {
 
                 </div>
 
-                <div className="custom-newsdocument-card">
+                <div className="custom-newsdocument-card lg:hidden">
                     <NewsDocumentCard data={data} />
                 </div>
 

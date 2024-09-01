@@ -4,6 +4,7 @@ import { LogoRecruitment } from '../../../assets/Logo';
 import { Clock, MapIcon } from '../../../assets';
 import { Button } from '../../button/Button';
 import StatusComponent from '../../Tag/StatusComponent/StatusComponent';
+import { useNavigate } from 'react-router-dom';
 
 interface IRecruitmentCard {
     title: string
@@ -16,9 +17,17 @@ interface IRecruitmentCard {
 
 
 
-const RecruitmentCard: React.FC<IRecruitmentCard> = ({title, position, location, date, des, status}) => {
+const RecruitmentCard: React.FC<IRecruitmentCard> = ({ title, position, location, date, des, status }) => {
+    const navigate = useNavigate();
+
+    const handleCardClick = () => {
+        navigate('/recruitment/recruitmentdetails', { state: { title } });
+    };
     return (
-        <div className="xl:w-[362px] w-[343px] xl:h-[296px] h-[276px] bg-white rounded-xl flex flex-col justify-between flex-shrink-0">
+        <div 
+            className="xl:w-[362px] w-[343px] xl:h-[296px] h-[276px] bg-white rounded-xl flex flex-col justify-between flex-shrink-0"
+            onClick={handleCardClick}
+        >
             <div className="inline-flex items-center gap-3">
                 <LogoRecruitment />
                 <div className="flex flex-col items-start font-roboto gap-2">

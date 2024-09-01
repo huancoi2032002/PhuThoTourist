@@ -3,12 +3,18 @@ import './Styles.scss'
 import { EllipseIcon } from "../../../assets";
 import NameTag from "../../Tag/NameTag/NameTag";
 import { TypeCard } from "../../../Store/Card/TypeCard";
+import { useNavigate } from "react-router-dom";
 
 
 
 const Card: React.FC<TypeCard> = ({ src, roleName, title, description, view, day, showDetails, showRoles }) => {
+    const navigate = useNavigate();
+
+    const handleCardClick = () => {
+        navigate('/articles/articledetails', { state: { title } });
+    };
     return (
-        <div className="xl:w-[362px] w-[343px] h-[414px] xl:h-auto rounded-[12px] gap-2 bg-white card-custom cursor-pointer">
+        <div className="xl:w-[362px] w-[343px] h-[414px] xl:h-auto rounded-[12px] gap-2 bg-white card-custom cursor-pointer" onClick={handleCardClick}>
             <div className="w-full xl:h-[197px] h-[187px] image-container">
                 <img src={src} className="w-full h-full object-cover rounded-t-[12px]" alt="Description" />
             </div>

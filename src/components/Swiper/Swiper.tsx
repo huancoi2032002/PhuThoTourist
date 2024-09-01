@@ -7,6 +7,11 @@ import './Swiper.scss';
 
 SwiperCore.use([EffectCoverflow, Autoplay]);
 
+interface SlideText {
+    index: number;
+    content: string;
+}
+
 interface ReusableSwiperSliderProps {
     images: string[];
     slidesPerView?: number;
@@ -20,6 +25,7 @@ interface ReusableSwiperSliderProps {
     };
     renderSlide: (src: string, index: number) => React.ReactNode;
     onClickSlide?: (index: number) => void;
+    slideText?: SlideText[]; // Updated type
 }
 
 const ReusableSwiperSlider: React.FC<ReusableSwiperSliderProps> = ({
@@ -34,7 +40,8 @@ const ReusableSwiperSlider: React.FC<ReusableSwiperSliderProps> = ({
         slideShadows: true
     },
     renderSlide,
-    onClickSlide = () => { }
+    onClickSlide = () => { },
+    slideText = []
 }) => {
     const swiperRef = useRef<SwiperCore | null>(null); // Ref to access Swiper instance
 
@@ -47,6 +54,12 @@ const ReusableSwiperSlider: React.FC<ReusableSwiperSliderProps> = ({
             swiper.slideTo(actualIndex, 300);
             onClickSlide(index); // Call the external onClickSlide function
         }
+    };
+
+    // Helper function to get text content by index
+    const getSlideText = (index: number) => {
+        const text = slideText?.find(item => item.index === index + 1);
+        return text ? text.content : "";
     };
 
     return (
@@ -65,6 +78,9 @@ const ReusableSwiperSlider: React.FC<ReusableSwiperSliderProps> = ({
                 {images.map((src, index) => (
                     <SwiperSlide key={index} onClick={() => handleClick(index)}>
                         {renderSlide(src, index)}
+                        <div className="slide-content">
+                            {getSlideText(index)} {/* Display text for each slide */}
+                        </div>
                     </SwiperSlide>
                 ))}
             </Swiper>

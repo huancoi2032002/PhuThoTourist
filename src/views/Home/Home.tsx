@@ -12,9 +12,10 @@ const Home = () => {
             element.scrollIntoView({ behavior: 'smooth' });
         }
     };
+    //em dùng tailwind kết hợp với scss để cấu hình responsive
     return (
         <Layout>
-
+            
             <div className="w-full flex flex-col items-center justify-center lg:pt-[60px]">
                 <div className="w-full lg:pt-[168px] mt-[-120px]">
                     <HomeSlider />

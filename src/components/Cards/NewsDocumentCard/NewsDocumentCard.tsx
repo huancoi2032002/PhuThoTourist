@@ -3,6 +3,7 @@ import { DownloadIcon } from "../../../assets";
 import { DataItem } from "../../Table/TableDocument/TableDocument";
 import Pagination from "../../Pagination/Pagination";
 import './Styles.scss';
+import { useNavigate } from "react-router-dom";
 
 interface NewsDocumentCardProps {
     data: DataItem[];
@@ -35,9 +36,13 @@ const NewsDocumentCard: React.FC<NewsDocumentCardProps> = ({ data }) => {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     const currentItems = data.slice(startIndex, endIndex);
+    const navigate = useNavigate();
 
+    const handleCardClick = () => {
+        navigate('/articles/articledetails', { });
+    };
     return (
-        <div className="flex flex-col gap-3 mb-8">
+        <div className="flex flex-col gap-3 mb-8" onClick={handleCardClick}>
             {currentItems.map(({ name, date, download, stt }) => (
                 <div className="flex flex-col justify-center items-start p-4 gap-[10px] custom-newsdocumentcard" key={stt}>
                     <div className="flex w-[311px] justify-between items-center">

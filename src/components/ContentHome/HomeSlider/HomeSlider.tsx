@@ -9,6 +9,37 @@ import TueNhi5 from '../../../assets/tuenhi/tuenhicuahuan.jpg';
 import TueNhi6 from '../../../assets/tuenhi/tuenhicuahuuhuan.jpg';
 import TueNhi7 from '../../../assets/tuenhi/tuenhicuanguyenhuuhuan.jpg';
 
+const slideText = [
+    {
+        index: 1,
+        content: "Hơn 1000 bánh chưng lộc cho khách dâng hương vượng vua Hùng tại Đầm Sen"
+    },
+    {
+        index: 2,
+        content: "Kết quả đấu giá giữ xe tại CVVH Đầm Sen 2022"
+    },
+    {
+        index: 3,
+        content: "Hơn 1000 bánh chưng lộc cho khách dâng hương vượng vua Hùng tại Đầm Sen"
+    },
+    {
+        index: 4,
+        content: "Hơn 1000 bánh chưng lộc cho khách dâng hương vượng vua Hùng tại Đầm Sen"
+    },
+    {
+        index: 5,
+        content: "Hơn 1000 bánh chưng lộc cho khách dâng hương vượng vua Hùng tại Đầm Sen"
+    },
+    {
+        index: 6,
+        content: "Hơn 1000 bánh chưng lộc cho khách dâng hương vượng vua Hùng tại Đầm Sen"
+    },
+    {
+        index: 7,
+        content: "Hơn 1000 bánh chưng lộc cho khách dâng hương vượng vua Hùng tại Đầm Sen"
+    },
+];
+
 const HomeSlider: React.FC = () => {
     const images = [
         TueNhi1,
@@ -58,6 +89,7 @@ const HomeSlider: React.FC = () => {
                         }}
                         renderSlide={renderCustomSlide}
                         onClickSlide={handleSlideClick}
+                        slideText={slideText}
                     />
                 </div>
             </div>

@@ -1,11 +1,17 @@
 import { Button } from '../../button/Button';
 import { Rectangle } from '../../Rectangles/Rectangle/Rectangle';
 import Vector from '../../Vector/Vector';
+import { useNavigate } from 'react-router-dom';
 import './Styles.scss'
 
 const HomeAboutLeft = () => {
+    const navigate = useNavigate();
+
+    const handleCardClick = () => {
+        navigate('/articles/articledetails', { });
+    };
     return (
-        <div className="inline-flex flex-col xl:items-start items-center xl:gap-[30px] xl:w-[694px] w-[375px] xl:h-[535px] py-[6px] gap-[4px]">
+        <div className="inline-flex flex-col xl:items-start items-center xl:gap-[30px] xl:w-[694px] w-[375px] xl:h-[535px] py-[6px] gap-[4px]" >
             <div className="flex flex-col xl:items-start items-center gap-[10px] xl:w-[666px]">
                 <h3 className="font-roboto text-center xl:text-[18px] text-[12px] font-semibold about-me">VỀ CHÚNG TÔI</h3>
                 <h2 className='text-blue-primary-600 font-philosopher xl:text-[30px] text-[20px] xl:text-start text-center font-bold leading-normal'>Chúng tôi cung cấp dịch vụ du lịch đáp ứng mọi nhu cầu của bạn!</h2>
@@ -31,7 +37,7 @@ const HomeAboutLeft = () => {
                 </div>
             </div>
             <div className="custom-btn-about">
-                <Button type='button' label='Xem chi tiết' />
+                <Button type='button' label='Xem chi tiết' onClick={handleCardClick}/>
             </div>
         </div>
     )

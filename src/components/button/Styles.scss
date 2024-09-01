@@ -22,3 +22,12 @@
 .custom-button:hover{
     background: var(--blue-primary-400, #3376B8);
 }
+
+@media (max-width: 768px){
+    .custom-button{
+        height: 40px;
+    }
+    .custom-btn{
+        font-size: 14px;
+    }
+}

@@ -1,5 +1,6 @@
 import React from "react"
 import './Styles.scss'
+import { useNavigate } from "react-router-dom"
 
 type NewsCardProps = {
     src: string
@@ -7,8 +8,13 @@ type NewsCardProps = {
     description: string
 }
 const NewsCard: React.FC<NewsCardProps> = ({ src, title, description }) => {
+    const navigate = useNavigate();
+
+    const handleCardClick = () => {
+        navigate('/articles/articledetails', { state: { title } });
+    };
     return (
-        <div className="xl:w-[362px] w-[343px] h-auto rounded-[12px] bg-white newscard-custom cursor-pointer flex-shrink-0">
+        <div className="xl:w-[362px] w-[343px] h-auto rounded-[12px] bg-white newscard-custom cursor-pointer flex-shrink-0" onClick={handleCardClick}>
             <div className="w-full h-[197px]">
                 <img src={src} className="w-full h-full object-cover rounded-t-[12px]" alt="Description" />
             </div>
