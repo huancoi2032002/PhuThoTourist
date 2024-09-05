@@ -1,16 +1,15 @@
-import React from "react";
-import TueNhi from '../../../assets/tuenhi/tuenhi1.jpg';
+import React, { useState, useEffect } from "react";
 import { TypeCard } from "../../../Store/Card/TypeCard";
 import { EllipseIcon } from "../../../assets";
+import { fetchPosts } from "../../../firebase";
 import './Styles.scss'
 
-
-
+// MiniTag component
 export const MiniTag: React.FC<TypeCard> = ({ view, day, src, title }) => {
     return (
         <div className="xl:w-[314px] w-[304px] h-[102px] flex bg-white rounded-[4px] custom-minitag flex-shrink-0 gap-[12px] overflow-hidden">
             <div className="w-[104px] h-[102px] flex-shrink-0">
-                <img src={src} className="w-full h-full object-cover" />
+                <img src={src} className="w-full h-full object-cover" alt="Post Thumbnail" />
             </div>
             <div className="w-auto h-auto flex flex-col items-start justify-center gap-[8px]">
                 <h3 className="text-[#666] font-roboto text-[14px] font-bold">
@@ -23,26 +22,44 @@ export const MiniTag: React.FC<TypeCard> = ({ view, day, src, title }) => {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
+// NewsPost component
 const NewsPost = () => {
+    const [posts, setPosts] = useState<any[]>([]);
+
+    useEffect(() => {
+        const loadPosts = async () => {
+            try {
+                const postsData = await fetchPosts();
+                setPosts(postsData);
+            } catch (error) {
+                console.error("Error fetching posts: ", error);
+            }
+        };
+
+        loadPosts();
+    }, []);
+    //Cũng như ở bên kia
     return (
         <div className="h-[603px] xl:w-[362px] flex flex-col p-[20px] custom-bg-newspost rounded-[8px]">
             <div className="pb-[16px]">
                 <h2 className="font-roboto text-[24px] font-bold text-[#0054A6]">Bài mới nhất</h2>
             </div>
             <div className="h-[520px] inline-flex flex-col items-start gap-4 scroll-newspost flex-shrink-0">
-                <MiniTag day="24/08/20024" view={10000} title="Thông báo đấu giá giữ xe tại CVHH Đầm Sen" src={TueNhi} />
-                <MiniTag day="24/08/20024" view={20000} title="Thông báo đấu giá giữ xe tại CVHH Đầm Sen" src={TueNhi} />
-                <MiniTag day="24/08/20024" view={30000} title="Thông báo đấu giá giữ xe tại CVHH Đầm Sen" src={TueNhi} />
-                <MiniTag day="24/08/20024" view={40000} title="Thông báo đấu giá giữ xe tại CVHH Đầm Sen" src={TueNhi} />
-                <MiniTag day="24/08/20024" view={50000} title="Thông báo đấu giá giữ xe tại CVHH Đầm Sen" src={TueNhi} />
-                <MiniTag day="24/08/20024" view={60000} title="Thông báo đấu giá giữ xe tại CVHH Đầm Sen" src={TueNhi} />
-                <MiniTag day="24/08/20024" view={70000} title="Thông báo đấu giá giữ xe tại CVHH Đầm Sen" src={TueNhi} />
+                {posts.map(post => (
+                    <MiniTag
+                        key={post.idPost}
+                        day={post.createDate}
+                        view={post.view}
+                        title={post.title}
+                        src={post.src}
+                    />
+                ))}
             </div>
         </div>
-    )
+    );
 }
 
-export default NewsPost
+export default NewsPost;

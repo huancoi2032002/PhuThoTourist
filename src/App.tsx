@@ -4,6 +4,8 @@ import { Articles, Document, Home, Recruitment } from './views';
 import ArticleDetails from './views/Articles/ArticleDetails/ArticleDetails';
 import RecruitmentDetail from "./views/Recruitment/RecruitmentDetail/RecruitmentDetail";
 
+import { db } from './config/config'; 
+
 function App() {
   return (
     <Routes>

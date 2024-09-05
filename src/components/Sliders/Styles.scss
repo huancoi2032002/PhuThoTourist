@@ -22,7 +22,9 @@
     line-height: 150%;
 }
 
-
+.custom-btn-slider{
+    height: 180px;
+}
 .custom-icon {
     color: #3376B8;
     transition: color 0.3s;
@@ -37,6 +39,9 @@
 }
 
 @media (max-width: 768px) {
+    .custom-btn-slider{
+        height: 100%;
+    }
     .custom-title {
         font-size: 15px;
     }
@@ -49,5 +54,13 @@
     }
     .custom-btn-slider{
         gap: 28px;
+    }
+    .custom-logodot{
+        width: 16px;
+        height: 8px;
+    }
+    .custom-circleicon{
+        width: 8px;
+        height: 8px;
     }
 }

@@ -16,3 +16,16 @@
         height: 20px;
     }
 }
+.search-result {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.search-result:hover {
+    background-color: #f0f0f0;
+}
+
+.results-list {
+    max-height: 200px;
+    overflow-y: auto;
+}

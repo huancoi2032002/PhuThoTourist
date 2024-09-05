@@ -12,9 +12,11 @@ import Layout from "../../layouts/Layout";
 import './Styles.scss'
 import FilterPackRowMobile from "../../components/Filter/FiltersPacks/FilterPackRow/FilterPackRowMobile";
 import { Outlet, useLocation } from 'react-router-dom';
+import { fetchPosts } from "../../firebase";
 
 const Articles = () => {
     const totalItems = 50; // Tổng số mục
+    const [posts, setPosts] = useState<any[]>([]); //Sử dụng useState tạo mảng 
     const [itemsPerPage, setItemsPerPage] = useState(12); // Số mục mỗi trang
     const [currentPage, setCurrentPage] = useState(1); // Trạng thái trang hiện tại
 
@@ -32,17 +34,21 @@ const Articles = () => {
     }, [])
 
 
-    // Dữ liệu mô phỏng, thay thế bằng dữ liệu thực tế của bạn
-    const postCards = Array.from({ length: totalItems }, (_, index) => ({
-        src: TueNhi,
-        title: `Thông báo ${index + 1}`,
-        roleName: "Admin",
-        view: 1000 + index,
-        day: `20/02/2034`,
-    }));
+    useEffect(() => {
+        const loadSlides = async () => {
+            try {
+                const slidesData = await fetchPosts();
+                setPosts(slidesData); //truyền dữ liệu slidesData và setPosts
+            } catch (error) {
+                console.error("Error fetching slides: ", error); // Nếu lỗi thì hiện thông báo
+            }
+        };
+
+        loadSlides();
+    }, []);
 
     // Tạo nhiều đối tượng cho mỗi chỉ số nếu cần
-    const extendedPostCards = postCards.flatMap(item => [item, item]);
+    const extendedPostCards = posts.flatMap(item => [item, item]);
 
     const handlePageChange = (page: number) => {
         setCurrentPage(page);

@@ -57,13 +57,25 @@
 
 .custom-h2-card-postcard {
     overflow: hidden;
-    color: var(--blue-primary-500, #0054A6);
+    /* Hides any overflowed content */
+    white-space: nowrap;
+    /* Prevents the text from wrapping to a new line */
     text-overflow: ellipsis;
+    /* Adds ellipsis (...) when text overflows */
+    color: var(--blue-primary-500, #0054A6);
+    /* Text color */
     font-size: 16px;
+    /* Font size */
     font-style: normal;
+    /* Font style */
     font-weight: 700;
-    line-height: normal;
+    /* Font weight */
+    line-height: 1.2;
+    /* Line height for better spacing */
+    max-width: 100%;
+    /* Ensures the element does not exceed its container's width */
 }
+
 
 .custom-text-postcard {
     color: var(--gray-gray-400, #858585);
@@ -73,8 +85,8 @@
     line-height: normal;
 }
 
-@media (max-width: 768px){
-    .custom-des-postcard{
+@media (max-width: 768px) {
+    .custom-des-postcard {
         width: 312px;
         height: 207px;
         justify-content: space-between;
