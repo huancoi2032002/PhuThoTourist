@@ -8,7 +8,7 @@ type NameTagProps = {
 };
 
 
-const NameTag: React.FC<NameTagProps> = ({ label, keywords}) => {
+const NameTag: React.FC<NameTagProps> = ({ label}) => {
     return (
         <div
             className="flex justify-center items-center px-[12px] py-[8px]  custom-NameTag cursor-pointer w-auto h-auto"

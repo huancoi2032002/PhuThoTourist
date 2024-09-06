@@ -1,8 +1,5 @@
 import { VectorIcon } from "../../assets"
 
-type VectorProps = {
-    width: string
-}
 
 const Vector = () => {
     return (

@@ -1,5 +1,4 @@
 import React, {ReactNode} from "react";
-import { LightBuldIcon, NewsIcon, EventIcon, BellIcon, GroupIcon } from "../../../assets/iconpack";
 import './Styles.scss'
 
 type FilterPackProps = {

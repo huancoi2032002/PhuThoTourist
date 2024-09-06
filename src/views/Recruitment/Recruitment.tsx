@@ -8,7 +8,7 @@ import RectangleTitle from "../../components/Rectangles/RectangleTitle/Rectangle
 import Layout from "../../layouts/Layout"
 import './Styles.scss'
 import { VueSetting } from "../../assets/iconpack"
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { fetchRecruitment } from "../../firebase"
 import FilterPackColRecruitment from "../../components/Filter/FiltersPacks/FilterPackCol/FilterPackColRecruitment"
 

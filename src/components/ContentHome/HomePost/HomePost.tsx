@@ -14,9 +14,6 @@ const HomePost = () => {
     const textColorStyle: React.CSSProperties = {
         color: '#FFF'
     }
-    const handleSlideClick = (index: number) => {
-        console.log(`Slide ${index} clicked`);
-    };
     const handleClick = () => {
         navigate('/articles', { state: {} });
     };

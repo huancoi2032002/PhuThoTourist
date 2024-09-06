@@ -1,6 +1,6 @@
-import React, { ReactNode, useState, useEffect } from "react";
+import React, { useState } from "react";
 import './Styles.scss';
-import { BellIcon, Ellipse2Icon, EventIcon, GroupIcon, LightBuldIcon, NewsIcon } from "../../../../assets/iconpack";
+import { BellIcon, EventIcon, GroupIcon, LightBuldIcon, NewsIcon } from "../../../../assets/iconpack";
 import { FilterPack } from "../../../Tag/FilterPack/FilterPack";
 
 const sidebarItems = [

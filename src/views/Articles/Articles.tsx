@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import TueNhi from '../../assets/tuenhi/tuenhi2.jpg';
+import { useEffect, useState } from "react";
 import PostCard from "../../components/Cards/PostCard/PostCard";
 import { Pagination } from "antd";
 import "antd/dist/reset.css";
@@ -11,11 +10,10 @@ import NewsPost from "../../components/ContentPost/NewsPost/NewsPost";
 import Layout from "../../layouts/Layout";
 import './Styles.scss'
 import FilterPackRowMobile from "../../components/Filter/FiltersPacks/FilterPackRow/FilterPackRowMobile";
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { fetchPosts } from "../../firebase";
 
 const Articles = () => {
-    const totalItems = 50; // Tổng số mục
     const [posts, setPosts] = useState<any[]>([]); //Sử dụng useState tạo mảng 
     const [itemsPerPage, setItemsPerPage] = useState(12); // Số mục mỗi trang
     const [currentPage, setCurrentPage] = useState(1); // Trạng thái trang hiện tại

@@ -25,7 +25,7 @@ interface ReusableSwiperSliderProps {
     };
     renderSlide: (src: string, index: number) => React.ReactNode;
     onClickSlide?: (index: number) => void;
-    slideText?: SlideText[]; // Updated type
+    slideText?: SlideText[];
 }
 
 const ReusableSwiperSlider: React.FC<ReusableSwiperSliderProps> = ({
@@ -41,31 +41,23 @@ const ReusableSwiperSlider: React.FC<ReusableSwiperSliderProps> = ({
     },
     renderSlide,
     onClickSlide = () => { },
-    slideText = []
 }) => {
-    const swiperRef = useRef<SwiperCore | null>(null); // Ref to access Swiper instance
+    const swiperRef = useRef<SwiperCore | null>(null); // Ref to store Swiper instance
 
     const handleClick = (index: number) => {
         if (swiperRef.current) {
-            const swiper = swiperRef.current.swiper;
-            const loopedSlides = swiper.loopedSlides || 0;
-            const slides = swiper.slides.length;
-            const actualIndex = (index + loopedSlides) % slides;
-            swiper.slideTo(actualIndex, 300);
+            const swiper = swiperRef.current;
+            swiper.slideTo(index, 300); // Slide to the correct index
             onClickSlide(index); // Call the external onClickSlide function
         }
-    };
-
-    // Helper function to get text content by index
-    const getSlideText = (index: number) => {
-        const text = slideText?.find(item => item.index === index + 1);
-        return text ? text.content : "";
     };
 
     return (
         <div className="md:w-w-slider w-[699px] flex items-center justify-center relative custom-swiper">
             <Swiper
-                ref={swiperRef}
+                onSwiper={(swiper) => {
+                    swiperRef.current = swiper; // Store Swiper instance in ref
+                }}
                 effect="coverflow"
                 coverflowEffect={effectOptions}
                 slidesPerView={slidesPerView}

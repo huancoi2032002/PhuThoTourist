@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import './Styles.scss';
 import Search from "../../../Search/Search";
 import FilterDate from "../../../Filter/FilterDate/DateFilter";

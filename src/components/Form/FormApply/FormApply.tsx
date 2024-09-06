@@ -1,26 +1,9 @@
-import React from "react";
-import dayjs from "dayjs";
 import './Styles.scss'
 import { Button } from "../../button/Button";
 import LogoVN from '../../../assets/vietnam.png';
 import { Attached } from "../../../assets";
 
-interface IUser {
-    nameUser: string
-    dateOfBirth: string
-    address: string
-    email: string
-    gender: string
-    placeOfBirth: string
-    level: string
-    phoneNumber: string
-    readyToWork: string
-    overTime: string
-    placesOfWork: string
-    personalExperience: string
-    cv: string
-    facebook: string
-}
+
 interface FormApllyProps {
     elements: { id: number; content: JSX.Element }[];
 }

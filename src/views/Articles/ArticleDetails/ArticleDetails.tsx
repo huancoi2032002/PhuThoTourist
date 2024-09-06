@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import PostCard from "../../../components/Cards/PostCard/PostCard";
 import './Styles.scss';
 import { MiniTag } from "../../../components/ContentPost/NewsPost/NewsPost";

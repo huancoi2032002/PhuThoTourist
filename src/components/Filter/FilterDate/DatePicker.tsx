@@ -1,11 +1,12 @@
-import React from "react";
 import './FilterDate.scss';
 import { AngleLeft, AngleRight } from "../../../assets";
 
+
 const DatePicker = () => {
+
     return (
         <div className="w-[327px] h-[292px] custom-datepicker px-6">
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center" >
                 <AngleLeft />
                 <div className="w-[108px] h-10 flex font-helvetica">
                     <div className="inline-flex h-10 py-[10px] px-1 justify-center items-center ">
