@@ -2,7 +2,7 @@ import { Clock, MapIcon } from "../../../assets";
 import { LogoRecruitment, LogoRecruitmentXL } from "../../../assets/Logo";
 import Layout from "../../../layouts/Layout";
 import StatusComponent from "../../../components/Tag/StatusComponent/StatusComponent";
-import TueNhi from "../../../assets/tuenhi/tuenhicuahuan.jpg"
+import TueNhi from "../../../assets/image.png"
 import './Styles.scss';
 import TableRecuitment from "../../../components/Table/TableRecuitment/TableRecuitment";
 import FormApply from "../../../components/Form/FormApply/FormApply";

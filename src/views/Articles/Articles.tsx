@@ -71,13 +71,13 @@ const Articles = () => {
                             <Slider />
                             <NewsPost />
                         </div>
-                        <FilterPackRowMobile className="xl:hidden" />
+                        <FilterPackRowMobile className="xl:hidden z-30" />
                         <div className="xl:max-w-[1520px] xl:w-full xl:h-[1108px]  flex justify-between flex-shrink-0">
                             <FilterPackCol className="custom-filterpackcol-article" />
                             <div className="flex flex-col gap-[22px]">
-                                <FilterPackRow className="article-filterpackrow" />
-                                <div>
-                                    <div className="inline-flex flex-col items-center gap-6">
+                                <FilterPackRow className="article-filterpackrow z-20" />
+                                <div className="z-10">
+                                    <div className="inline-flex flex-col items-center gap-6 z-10">
                                         <div className="xl:w-[1134px] h-auto flex xl:flex-wrap xl:gap-6 custom-list-postcard">
                                             {currentItems.map((item, index) => (
                                                 <PostCard

@@ -3,6 +3,7 @@ import dayjs from "dayjs";
 import './Styles.scss'
 import { Button } from "../../button/Button";
 import LogoVN from '../../../assets/vietnam.png';
+import { Attached } from "../../../assets";
 
 interface IUser {
     nameUser: string
@@ -39,7 +40,7 @@ const elements = [
         content: (
             <div className="flex flex-col items-start gap-2">
                 <span>Năm sinh</span>
-                <input type="text" placeholder="" className="custom-input-apply" />
+                <input type="text" placeholder="12-12-2000" className="custom-input-apply" />
             </div>
         )
     },
@@ -48,7 +49,7 @@ const elements = [
         content: (
             <div className="flex flex-col items-start gap-2">
                 <span>Nơi ở hiện nay</span>
-                <input type="text" placeholder="" className="custom-input-apply" />
+                <input type="text" placeholder="123 Âu Cơ, Phường 9, Tân Bình, TP HCM" className="custom-input-apply" />
             </div>
         )
     },
@@ -57,7 +58,7 @@ const elements = [
         content: (
             <div className="flex flex-col items-start gap-2">
                 <span>Email</span>
-                <input type="text" placeholder="" className="custom-input-apply" />
+                <input type="text" placeholder="Nguyenvana@gmail.com" className="custom-input-apply" />
             </div>
         )
     },
@@ -66,7 +67,7 @@ const elements = [
         content: (
             <div className="flex flex-col items-start gap-2">
                 <span>Trình độ</span>
-                <input type="text" placeholder="" className="custom-input-apply" />
+                <input type="text" placeholder="Đại học" className="custom-input-apply" />
             </div>
         )
     },
@@ -108,7 +109,7 @@ const elements = [
         content: (
             <div className="flex flex-col items-start gap-2">
                 <span>Nơi sinh</span>
-                <input type="text" placeholder="" className="custom-input-apply" />
+                <input type="text" placeholder="Phường 6, Quận Tân Bình, TP HCM" className="custom-input-apply" />
             </div>
         )
     },
@@ -124,7 +125,7 @@ const elements = [
                             <span>+84</span>
                         </div>
                     </div>
-                    <input type="text" placeholder="" className=" w-full" />
+                    <input type="text" placeholder="0123456789" className=" w-full" />
                 </div>
             </div>
         )
@@ -134,16 +135,19 @@ const elements = [
         content: (
             <div className="flex flex-col items-start gap-2">
                 <span>Facebook cá nhân</span>
-                <input type="text" placeholder="" className="custom-input-apply" />
+                <input type="text" placeholder="facebook.com.vn" className="custom-input-apply" />
             </div>
         )
     },
     {
         id: 11,
         content: (
-            <div className="flex flex-col items-start gap-2">
+            <div className="flex flex-col items-start gap-2 ">
                 <span>Đính kèm CV</span>
-                <input type="text" placeholder="" className="custom-input-apply" />
+                <div className="xl:w-[437px] w-[311px] rounded-lg flex xl:items-start items-center gap-1 xl:px-4 px-2 xl:py-[10px] py-[7px] bg-white xl:h-10 h-7">
+                    <input type="text" placeholder="Không có tập tin nào được chọn" className="xl:text-base text-xs w-full" />
+                        <Attached className="xl:w-6 xl:h-6 h-4 w-4" />
+                </div>
             </div>
         )
     },
@@ -229,7 +233,7 @@ const FormApply = () => {
             </div>
             <div className="w-full flex items-center justify-end">
                 <div className="xl:w-36 w-full">
-                    <Button type="button" label="Gửi ngay"/>
+                    <Button type="button" label="Gửi ngay" />
                 </div>
             </div>
         </div>

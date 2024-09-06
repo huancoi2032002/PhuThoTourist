@@ -1,24 +1,44 @@
-import TueNhi from "../../../assets/tuenhi/tuenhicuanguyenhuuhuan.jpg";
+import React, { useState, useEffect } from "react";
 import PostCard from "../../../components/Cards/PostCard/PostCard";
 import './Styles.scss';
 import { MiniTag } from "../../../components/ContentPost/NewsPost/NewsPost";
 import Layout from "../../../layouts/Layout";
+import { fetchPosts } from "../../../firebase";
+import PDF from '../../../assets/pdf.png';
 
-// Đây là page chi tiết bài viết, em bị nhầm ạ
-const pdfjsVersion = '4.4.168';
+
 
 const ArticleDetails = () => {
-    const fileUrl = '../../../';
+    const [posts, setPosts] = useState<any[]>([]);
+
+    useEffect(() => {
+        const loadPosts = async () => {
+            try {
+                const postsData = await fetchPosts();
+                setPosts(postsData);
+            } catch (error) {
+                console.error("Error fetching posts: ", error);
+            }
+        };
+
+        loadPosts();
+    }, []);
+
     return (
         <Layout>
-            <div className="flex xl:p-12 flex-col items-start xl:gap-12 custom-articledetail xl:mt-36 mb-10">
+            <div className="flex xl:p-12 flex-col items-start xl:gap-12 custom-articledetail xl:mt-36 mb-10 gap-3">
                 <div className="xl:w-[1152px] xl:h-[101px] flex xl:pr-[38px] flex-col justify-center items-start gap-[2px]">
                     <h1 className="xl:w-[1214px] xl:h-[80px] custom-title-articledetail font-roboto">Kết quả đấu giá giữ xe tại CVVH Đầm Sen 2022</h1>
                     <p className="flex justify-center custom-author-articledetail font-roboto">by tuyendung in on Tháng Năm 21, 2020</p>
                 </div>
                 <div className="flex flex-col items-center gap-8">
                     <div className="xl:w-[1152px] w-[311px] xl:h-[688px] h-[183px] rounded-[4px]">
-                        <img src={TueNhi} alt="" className="w-full h-full object-cover" />
+                        {/* Conditional rendering to check if posts[0] exists */}
+                        {posts.length > 0 && posts[0].src ? (
+                            <img src={posts[0].src} alt="Article Image" className="w-full h-full object-cover" />
+                        ) : (
+                            <p>Loading image...</p>
+                        )}
                     </div>
                     <div className="w-full flex flex-col items-start gap-4">
                         <div className="xl:w-[1152px] flex flex-col gap-3 custom-des-article">
@@ -58,20 +78,33 @@ const ArticleDetails = () => {
                         </div>
                     </div>
                 </div>
-
+                <div className="w-full flex items-center justify-center">
+                    <div className="xl:w-[831px] xl:h-[747px] w-[311px] h-[284px]">
+                        <img src={PDF} className="w-full h-full object-cover" />
+                    </div>
+                </div>
                 <div className="flex flex-col items-start gap-4">
                     <h1 className="font-roboto custom-title-post-detail">Bài viết liên quan</h1>
                     <div className="w-[1152px] h-[292px] flex justify-between items-start custom-list-postcarddetails">
-                        <PostCard src={TueNhi} title="Thông báo: đấu giá giữ xe tại CVHH Đầm Sen" roleName="Admin" day="20/02/2022" view={10000} />
-                        <PostCard src={TueNhi} title="Thông báo: đấu giá giữ xe tại CVHH Đầm Sen" roleName="Admin" day="20/02/2022" view={10000} />
-                        <PostCard src={TueNhi} title="Thông báo: đấu giá giữ xe tại CVHH Đầm Sen" roleName="Admin" day="20/02/2022" view={10000} />
-                        <PostCard src={TueNhi} title="Thông báo: đấu giá giữ xe tại CVHH Đầm Sen" roleName="Admin" day="20/02/2022" view={10000} />
+                        {posts.slice(0, 4).map(post => (
+                            <PostCard
+                                src={post.src}
+                                title={post.title}
+                                roleName={post.roleName}
+                                day={post.day}
+                                view={post.view}
+                            />
+                        ))}
                     </div>
                     <div className="flex flex-col items-start gap-3 xl:hidden">
-                        <MiniTag day="24/08/20024" view={10000} title="Thông báo đấu giá giữ xe tại CVHH Đầm Sen" src={TueNhi} />
-                        <MiniTag day="24/08/20024" view={20000} title="Thông báo đấu giá giữ xe tại CVHH Đầm Sen" src={TueNhi} />
-                        <MiniTag day="24/08/20024" view={30000} title="Thông báo đấu giá giữ xe tại CVHH Đầm Sen" src={TueNhi} />
-                        <MiniTag day="24/08/20024" view={40000} title="Thông báo đấu giá giữ xe tại CVHH Đầm Sen" src={TueNhi} />
+                        {posts.slice(0, 4).map(post => (
+                            <MiniTag
+                                day={post.day}
+                                view={post.view}
+                                title={post.title}
+                                src={post.src}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>

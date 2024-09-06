@@ -1,3 +1,17 @@
 :root {
     --blue-primary-500: #0054A6;
 }
+
+@media (max-width: 768px) {
+    .custom-chips {
+        display: flex;
+        height: 28px;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .custom-chips-bg {
+        background: var(--blue-primary-50, #E6EEF7);
+    }
+}

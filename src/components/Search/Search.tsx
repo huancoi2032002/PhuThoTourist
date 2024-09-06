@@ -52,7 +52,7 @@ const Search: React.FC<SearchProps> = ({ width }) => {
 
     return (
         <div
-            className="flex xl:h-10 h-9 gap-2 flex-col flex-shrink-0 rounded-md relative"
+            className="flex xl:h-10 h-9 gap-2 flex-col flex-shrink-0 rounded-md relative z-30"
             style={{ width: width || 'auto' }}
             ref={searchRef} // Reference to the search component
         >

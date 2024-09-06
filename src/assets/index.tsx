@@ -83,7 +83,7 @@ export const NextIcon = ({ className }: SvgProps) => (
     </svg>
 );
 
-export const CircleIcon:React.FC<SvgProps> = ({className}) => (
+export const CircleIcon: React.FC<SvgProps> = ({ className }) => (
     <svg className={className} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
         <g filter="url(#filter0_b_5884_980)">
             <circle cx="8" cy="8" r="8" fill="white" fillOpacity="0.3" />
@@ -142,7 +142,7 @@ export const PolygonIcon = ({ className }: SvgProps) => {
     )
 }
 
-export const File:React.FC<SvgProps> = ({className}) => (
+export const File: React.FC<SvgProps> = ({ className }) => (
     <svg className={className} xmlns="http://www.w3.org/2000/svg" width="104" height="104" viewBox="0 0 104 104" fill="none">
         <g clipPath="url(#clip0_272_54101)">
             <path d="M33.0587 26.2449V16.5906C33.0587 15.7371 33.3978 14.9185 34.0013 14.315C34.6048 13.7115 35.4233 13.3724 36.2768 13.3724H68.458L84.5485 29.463V74.5166C84.5485 75.3701 84.2095 76.1886 83.6059 76.7921C83.0024 77.3956 82.1839 77.7347 81.3304 77.7347H71.6761" fill="#E1E1E1" />
@@ -169,16 +169,16 @@ export const DownloadIcon = () => (
     </svg>
 )
 
-export const ArrowLeft = () => (
+export const ArrowLeft: React.FC<SvgProps> = ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <path d="M13 15L7 10L13 5" fill="#A3A3A3" />
-        <path d="M13 15L7 10L13 5L13 15Z" stroke="#A3A3A3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path className={className} d="M13 15L7 10L13 5" fill="" />
+        <path className={className} d="M13 15L7 10L13 5L13 15Z" stroke="" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
 )
-export const ArrowRight = () => (
+export const ArrowRight: React.FC<SvgProps> = ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <path d="M7 15L13 10L7 5" fill="#4D4D4D" />
-        <path d="M7 15L13 10L7 5L7 15Z" stroke="#4D4D4D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path className={className} d="M7 15L13 10L7 5" fill="" />
+        <path className={className} d="M7 15L13 10L7 5L7 15Z" stroke="" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
 )
 
@@ -199,3 +199,19 @@ export const Close = () => (
     </svg>
 )
 
+export const AngleLeft: React.FC<SvgProps> = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M7.08331 10.6667L11.8333 15.3333C12.1666 15.6667 12.6666 15.6667 13 15.3333C13.3333 15 13.3333 14.5 13 14.1667L8.91665 9.99999L13 5.83332C13.3333 5.49999 13.3333 4.99999 13 4.66666C12.8333 4.49999 12.6666 4.41666 12.4166 4.41666C12.1666 4.41666 12 4.49999 11.8333 4.66666L7.08331 9.33332C6.74998 9.74999 6.74998 10.25 7.08331 10.6667C7.08331 10.5833 7.08331 10.5833 7.08331 10.6667Z" fill="#666666" />
+    </svg>
+)
+export const AngleRight: React.FC<SvgProps> = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M12.95 9.40832L8.23334 4.69999C8.15587 4.62188 8.0637 4.55989 7.96215 4.51758C7.8606 4.47527 7.75168 4.45349 7.64167 4.45349C7.53166 4.45349 7.42274 4.47527 7.32119 4.51758C7.21964 4.55989 7.12747 4.62188 7.05001 4.69999C6.8948 4.85613 6.80768 5.06734 6.80768 5.28749C6.80768 5.50764 6.8948 5.71885 7.05001 5.87499L11.175 10.0417L7.05001 14.1667C6.8948 14.3228 6.80768 14.534 6.80768 14.7542C6.80768 14.9743 6.8948 15.1855 7.05001 15.3417C7.12718 15.4204 7.21922 15.483 7.32078 15.526C7.42235 15.5689 7.53142 15.5912 7.64167 15.5917C7.75193 15.5912 7.861 15.5689 7.96256 15.526C8.06412 15.483 8.15616 15.4204 8.23334 15.3417L12.95 10.6333C13.0346 10.5553 13.1021 10.4606 13.1483 10.3552C13.1944 10.2497 13.2183 10.1359 13.2183 10.0208C13.2183 9.90574 13.1944 9.7919 13.1483 9.68648C13.1021 9.58107 13.0346 9.48636 12.95 9.40832Z" fill="#666666" />
+    </svg>
+)
+
+export const Attached: React.FC<SvgProps> = ({ className }) => (
+    <svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M11.5 22C9.96667 22 8.66667 21.4667 7.6 20.4C6.53333 19.3333 6 18.0333 6 16.5V6C6 4.9 6.39167 3.95833 7.175 3.175C7.95833 2.39167 8.9 2 10 2C11.1 2 12.0417 2.39167 12.825 3.175C13.6083 3.95833 14 4.9 14 6V15.5C14 16.2 13.7583 16.7917 13.275 17.275C12.7917 17.7583 12.2 18 11.5 18C10.8 18 10.2083 17.7583 9.725 17.275C9.24167 16.7917 9 16.2 9 15.5V6H10.5V15.5C10.5 15.7833 10.596 16.021 10.788 16.213C10.98 16.405 11.2173 16.5007 11.5 16.5C11.7833 16.5 12.021 16.404 12.213 16.212C12.405 16.02 12.5007 15.7827 12.5 15.5V6C12.5 5.3 12.2583 4.70833 11.775 4.225C11.2917 3.74167 10.7 3.5 10 3.5C9.3 3.5 8.70833 3.74167 8.225 4.225C7.74167 4.70833 7.5 5.3 7.5 6V16.5C7.5 17.6 7.89167 18.5417 8.675 19.325C9.45833 20.1083 10.4 20.5 11.5 20.5C12.6 20.5 13.5417 20.1083 14.325 19.325C15.1083 18.5417 15.5 17.6 15.5 16.5V6H17V16.5C17 18.0333 16.4667 19.3333 15.4 20.4C14.3333 21.4667 13.0333 22 11.5 22Z" fill="#0054A6" />
+    </svg>
+)

@@ -34,6 +34,79 @@ export const fetchPosts = async (): Promise<any[]> => { // Lấy dữ liệu pos
             roleName: dataPost[key].ruleCreatePost,
             view: dataPost[key].view,
             day: dataPost[key].createDate,
+            des: dataPost[key].des
+        }))
+    }
+    return [];
+};
+
+export const fetchHomeSlider = async (): Promise<any[]> => {
+    const postsRef = ref(db, 'homeslider');
+    const snapshot = await get(postsRef); 
+    if(snapshot.exists()){
+        const homeSlider = snapshot.val();
+        return Object.keys(homeSlider).map(key => ({
+            id: key,
+            link: homeSlider[key].link,
+        }))
+    }
+    return [];
+}
+
+export const fetchDocument = async (): Promise<any[]> => {
+    const postsRef = ref(db, 'document');
+    const snapshot = await get(postsRef);
+    if(snapshot.exists()){
+        const documentData = snapshot.val();
+        return Object.keys(documentData).map(key => ({
+            id: key,
+            src: documentData[key].src,
+            content: documentData[key].content
+        }))
+    }
+    return [];
+};
+export const fetchDocumentTable = async (): Promise<any[]> => {
+    const postsRef = ref(db, 'documentatble');
+    const snapshot = await get(postsRef);
+    if(snapshot.exists()){
+        const documentTableData = snapshot.val();
+        return Object.keys(documentTableData).map(key => ({
+            id: key,
+            stt: documentTableData[key].stt,
+            name: documentTableData[key].name,
+            date: documentTableData[key].date,
+            download: documentTableData[key].download
+        }))
+    }
+    return [];
+};
+
+export const fetchRecruitment = async (): Promise<any[]> => {
+    const postsRef = ref(db, 'recruitment');
+    const snapshot = await get(postsRef);
+    if(snapshot.exists()){
+        const recruitmentData = snapshot.val();
+        return Object.keys(recruitmentData).map(key => ({
+            id: key,
+            title: recruitmentData[key].title,
+            position: recruitmentData[key].position,
+            location: recruitmentData[key].location,
+            des: recruitmentData[key].des,
+            status: recruitmentData[key].status,
+        }))
+    }
+    return [];
+};
+export const fetchHomeService = async (): Promise<any[]> => {
+    const postsRef = ref(db, 'homeservice');
+    const snapshot = await get(postsRef);
+    if(snapshot.exists()){
+        const homeServiceData = snapshot.val();
+        return Object.keys(homeServiceData).map(key => ({
+            title: homeServiceData[key].title,
+            des: homeServiceData[key].des,
+            src: homeServiceData[key].src,
         }))
     }
     return [];

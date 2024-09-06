@@ -78,9 +78,6 @@ const ReusableSwiperSlider: React.FC<ReusableSwiperSliderProps> = ({
                 {images.map((src, index) => (
                     <SwiperSlide key={index} onClick={() => handleClick(index)}>
                         {renderSlide(src, index)}
-                        <div className="slide-content">
-                            {getSlideText(index)} {/* Display text for each slide */}
-                        </div>
                     </SwiperSlide>
                 ))}
             </Swiper>

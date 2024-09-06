@@ -59,7 +59,7 @@ const NewsDocumentCard: React.FC<NewsDocumentCardProps> = ({ data }) => {
                 </div>
             ))}
 
-            <div className="w-[343px] flex py-2 px-1 gap-8 rounded-[99px] custom-number-page">
+            <div className="w-[343px] flex px-1 gap-8 rounded-[99px] custom-number-page">
                 <Pagination
                     totalPages={Math.ceil(data.length / itemsPerPage)}
                     currentPage={currentPage}

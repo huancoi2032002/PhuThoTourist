@@ -1,14 +1,23 @@
-import './Styles.scss'
-type ButtonProps = {
-    label: string
-    type: 'button'
+import React from 'react';
+import './Styles.scss';
+
+interface ButtonProps {
+    label: string;
+    type: 'button';
     onClick?: () => void;
+    variant?: 'primary' | 'secondary'; // Add a variant prop for two styles
 }
 
-export const Button = (props : ButtonProps) => {
-    return(
-        <div className="custom-button">
-            <button type={props.type} className='custom-btn font-roboto' onClick={props.onClick}>{props.label}</button>
+export const Button: React.FC<ButtonProps> = ({ label, type, onClick, variant = 'primary' }) => {
+    return (
+        <div className={`custom-button font-roboto ${variant === 'primary' ? 'bg-primary' : 'bg-secondary'}`}>
+            <button
+                type={type}
+                className={`custom-btn font-roboto ${variant === 'primary' ? 'bg-primary' : 'bg-secondary'}`}
+                onClick={onClick}
+            >
+                {label}
+            </button>
         </div>
-    )
-}
+    );
+};

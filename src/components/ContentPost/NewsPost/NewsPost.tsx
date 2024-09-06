@@ -50,7 +50,7 @@ const NewsPost = () => {
             <div className="h-[520px] inline-flex flex-col items-start gap-4 scroll-newspost flex-shrink-0">
                 {posts.map(post => (
                     <MiniTag
-                        key={post.idPost}
+                        key={post.id}
                         day={post.createDate}
                         view={post.view}
                         title={post.title}

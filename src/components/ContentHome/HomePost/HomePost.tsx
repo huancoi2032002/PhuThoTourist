@@ -1,21 +1,37 @@
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Title from '../../title/Title'
 import './Styles.scss'
 import Card from '../../Cards/Card/Card'
-import TueNhi1 from '../../../assets/tuenhi/tuenhi1.jpg';
-import TueNhi2 from '../../../assets/tuenhi/tuenhi2.jpg';
-import TueNhi3 from '../../../assets/tuenhi/tuenhi3.jpg';
-import { Button } from '../../button/Button'
+import { Button } from '../../button/Button';
+import { useNavigate } from "react-router-dom";
+import { fetchPosts } from '../../../firebase';
 
 
 const HomePost = () => {
+    const [posts, setPosts] = useState<any[]>([]);
+    const navigate = useNavigate();
     const textColorStyle: React.CSSProperties = {
         color: '#FFF'
     }
     const handleSlideClick = (index: number) => {
         console.log(`Slide ${index} clicked`);
     };
+    const handleClick = () => {
+        navigate('/articles', { state: {} });
+    };
+    useEffect(() => {
+        const loadPosts = async () => {
+            try {
+                const postsData = await fetchPosts();
+                setPosts(postsData.slice(0, 3)); // Limit to 3 posts
+            } catch (error) {
+                console.error("Error fetching posts:", error);
+            }
+        };
+
+        loadPosts();
+    }, []);
 
     return (
         <div className="xl:w-[1520px] xl:h-[892px] w-[375px] home-post flex flex-col xl:justify-around items-center xl:gap-[10px] gap-4">
@@ -27,39 +43,21 @@ const HomePost = () => {
                 width="w-[56px] xl:w-[130px]"
             />
             <div className="w-full flex xl:justify-between items-center xl:px-[193px] custom-list-card-posthome">
-                <Card
-                    src={TueNhi1}
-                    roleName='Admin'
-                    title='Thông báo kết quả lựa chọn nhà thầu 2 màn hình Led P4 Outdoor Fullcolor'
-                    description='Công ty Cổ phần Dịch vụ Du lịch Phú Thọ thông báo đến các nhà thầu tham gia chào hàng cạnh tranh Gói thầu: Cung cấp, lắp đặt 02 màn...'
-                    view={10000}
-                    day='10/10/2024'
-                    showRoles={true}
-                    showDetails={true}
-                />
-                <Card
-                    src={TueNhi2}
-                    roleName='Admin'
-                    title='Thông báo kết quả lựa chọn nhà thầu 2 màn hình Led P4 Outdoor Fullcolor'
-                    description='Công ty Cổ phần Dịch vụ Du lịch Phú Thọ thông báo đến các nhà thầu tham gia chào hàng cạnh tranh Gói thầu: Cung cấp, lắp đặt 02 màn...'
-                    view={10000}
-                    day='10/10/2024'
-                    showRoles={true}
-                    showDetails={true}
-                />
-                <Card
-                    src={TueNhi3}
-                    roleName='Admin'
-                    title='Thông báo kết quả lựa chọn nhà thầu 2 màn hình Led P4 Outdoor Fullcolor'
-                    description='Công ty Cổ phần Dịch vụ Du lịch Phú Thọ thông báo đến các nhà thầu tham gia chào hàng cạnh tranh Gói thầu: Cung cấp, lắp đặt 02 màn...'
-                    view={10000}
-                    day='10/10/2024'
-                    showRoles={true}
-                    showDetails={true}
-                />
+                {posts.map(post => (
+                    <Card
+                        src={post.src}
+                        roleName={post.roleName}
+                        title={post.title}
+                        description={post.des}
+                        view={post.view}
+                        day={post.day}
+                        showRoles={true}
+                        showDetails={true}
+                    />
+                ))}
             </div>
             <div className="w-[343px]">
-                <Button label='Xem thêm bài viết' type='button' />
+                <Button label='Xem thêm bài viết' type='button' onClick={handleClick} />
             </div>
         </div>
     )

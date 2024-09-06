@@ -1,72 +1,54 @@
-import { addDays, format, subDays } from "date-fns";
-import { enUS } from "date-fns/locale";
-import { useCallback, useState } from "react";
-import type { FC } from "react";
-import type { RangeKeyDict } from "react-date-range";
-import type { Range } from "react-date-range";
-import { DateIcon, PlayIcon } from "../../../assets/iconpack";
+import React, { useState } from "react";
+import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css";
-import "react-date-range/dist/theme/default.css";
-import { DataRangePicker } from "./DataRangePickerComponent"; // Correct import here
+import "react-date-range/dist/theme/default.css"; // Import theme styles
+import { DateIcon, PlayIcon } from "../../../assets/iconpack";
+import DatePicker from "./DatePicker";
 
-const DatePickerComponent: FC = () => {
-    const [isDateRangePickerVisible, setIsDateRangePickerVisible] = useState(false);
-
-    const [valueDateRangePicker, setValueDateRangePicker] = useState<Range[] | undefined>([
+const DatePickerComponent: React.FC = () => {
+    const [dateRange, setDateRange] = useState([
         {
-            startDate: subDays(new Date(), 7),
-            endDate: addDays(new Date(), 0),
-            key: "selection",
+            startDate: new Date(),
+            endDate: new Date(),
+            key: 'selection',
         },
     ]);
 
-    const formattedValueDateRangePickerStartDate = valueDateRangePicker?.[0].startDate
-        ? format(valueDateRangePicker[0].startDate, "dd.MM.yyyy", { locale: enUS })
-        : "";
-    const formattedValueDateRangePickerEndDate = valueDateRangePicker?.[0].endDate
-        ? format(valueDateRangePicker[0].endDate, "dd.MM.yyyy", { locale: enUS })
-        : "";
+    const [showDatePicker, setShowDatePicker] = useState(false);
 
-    const handleChangeValueDateRangePicker = useCallback((ranges: RangeKeyDict) => {
-        const { selection } = ranges;
-        setValueDateRangePicker([selection]);
-        setIsDateRangePickerVisible(false); // Hide DateRangePicker after selection
-    }, []);
-
-    const toggleDateRangePicker = () => {
-        setIsDateRangePickerVisible(!isDateRangePickerVisible);
+    const handleSelect = (ranges: any) => {
+        setDateRange([ranges.selection]);
     };
 
     return (
         <div className="w-auto h-auto inline-flex flex-col justify-center items-center gap-2 custom-filterdate">
-            <div className="w-[322px] h-full flex items-center gap-2 ">
+            <div className="w-[322px] h-full flex items-center gap-2">
                 <div
                     className="w-[150px] flex justify-between items-center px-3 py-2 self-stretch bg-[#FFF] rounded-md flex-shrink-0 cursor-pointer"
-                    onClick={toggleDateRangePicker}
+                    onClick={() => setShowDatePicker(!showDatePicker)}
                 >
-                    <p className="flex items-center gap-3">{formattedValueDateRangePickerStartDate}</p>
+                    <p className="flex items-center gap-3">
+                        {dateRange[0].startDate.toLocaleDateString()}
+                    </p>
                     <DateIcon />
                 </div>
                 <PlayIcon />
                 <div
                     className="w-[150px] flex justify-between items-center px-3 py-2 self-stretch bg-[#FFF] rounded-md flex-shrink-0 cursor-pointer"
-                    onClick={toggleDateRangePicker}
+                    onClick={() => setShowDatePicker(!showDatePicker)}
                 >
-                    <p className="flex items-center gap-3">{formattedValueDateRangePickerEndDate}</p>
+                    <p className="flex items-center gap-3">
+                        {dateRange[0].endDate.toLocaleDateString()}
+                    </p>
                     <DateIcon />
                 </div>
             </div>
-            {isDateRangePickerVisible && (
-                <DataRangePicker
-                    editableDateInputs={true}
-                    locale={enUS}
-                    minDate={addDays(new Date(), -7)}
-                    maxDate={addDays(new Date(), 0)}
-                    onChange={handleChangeValueDateRangePicker}
-                    ranges={valueDateRangePicker}
-                    showDateDisplay={true}
-                    showPreview={true}
-                />
+
+            {/* Conditionally render the date picker */}
+            {showDatePicker && (
+                <div className="absolute mt-[350px]">
+                    <DatePicker />
+                </div>
             )}
         </div>
     );

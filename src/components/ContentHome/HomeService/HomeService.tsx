@@ -1,16 +1,27 @@
+import { useState, useEffect } from 'react';
 import Title from '../../title/Title'
 import React from 'react'
-import TueNhi1 from '../../../assets/tuenhi/tuenhi1.jpg';
-import TueNhi2 from '../../../assets/tuenhi/tuenhi2.jpg';
-import TueNhi3 from '../../../assets/tuenhi/tuenhi3.jpg';
 import NewsCard from '../../Cards/NewsCard/NewsCard';
 import './Styles.scss'
+import { fetchHomeService } from '../../../firebase';
 
 const HomeService:React.FC = () => {
     const textColorStyle: React.CSSProperties = {
         color: '#4D4D4D'
     }
-    
+    const [homeService, setHomeService] = useState<any[]>([]);
+    useEffect(() => {
+        const loadHomeService = async () => {
+            try {
+                const homeServiceData = await fetchHomeService();
+                setHomeService(homeServiceData); // Update the homeSlider state with fetched data
+            } catch (error) {
+                console.error("Error fetching homeService: ", error);
+            }
+        };
+
+        loadHomeService();
+    }, []);
     return(
         <div className="xl:w-[1520px] w-[375px] flex  flex-col xl:justify-around items-center gap-[50px] py-[40px]">
             <Title
@@ -21,21 +32,16 @@ const HomeService:React.FC = () => {
                 width='xl:w-[220px] w-[80px]'
             />
             <div className="w-full flex justify-between xl:px-[193px] custom-list-newscard">
-                <NewsCard  
-                    src={TueNhi1}
-                    title='Vui chơi giải trí'
-                    description='Với 2 khu giải trí nổi tiếng TP.HCM là Công viên văn hóa Đầm Sen, và khu du lịch sinh thái Vàm Sát (H.Cần Giờ)...'
+                {
+                    homeService.map(item => (
+                        <NewsCard  
+                        src={item.src}
+                        title={item.title}
+                        description={item.des}
                 /> 
-                <NewsCard  
-                    src={TueNhi2}
-                    title='Nhà hàng – Khách sạn'
-                    description='Với hệ thống khách sạn Phú Thọ và Ngọc Lan đạt chuẩn 3 sao, chuyên tiếp đón các đoàn thể thao....'
-                /> 
-                <NewsCard  
-                    src={TueNhi3}
-                    title='Dịch vụ Lữ hành'
-                    description='Tổ chức các tour trong và ngoài nước với Trung tâm Dịch vụ du lịch Đầm Sen. Ngoài ra Trung tâm còn thế mạnh là tổ chức...'
-                /> 
+                    ))
+                }
+                
             </div>
         </div>
     )

@@ -13,7 +13,7 @@ const PostCard: React.FC<TypeCard> = ({ src, title, roleName, view, day }) => {
     };
 
     return (
-        <div className="xl:w-[265px] w-[343px] xl:h-[292px] h-[402px] custom-postcard flex xl:pb-[10px] pb-3 flex-col items-center xl:gap-3 gap-2 overflow-hidden flex-shrink-0" onClick={handleCardClick}>
+        <div className="xl:w-[265px] w-[343px] xl:h-[292px] h-[402px] custom-postcard flex xl:pb-[10px] pb-3 flex-col items-center xl:gap-3 gap-2 overflow-hidden z-10" onClick={handleCardClick}>
             <div className="xl:w-[265px] w-[343px] xl:h-[146px] h-[190px] image-container">
                 <img src={src} className="w-full h-full object-cover" alt={title} />
                 <div className="overlay">Click để xem</div>

@@ -4,97 +4,56 @@ import Table from "../../components/Table/TableDocument/TableDocument";
 import { GroupDown } from "../../assets";
 import DocumentCard from "../../components/Cards/DocumentCard/DocumentCard";
 import RectangleTitle from "../../components/Rectangles/RectangleTitle/RectangleTitle";
-import TueNhi from '../../assets/tuenhi/tuenhicuahuuhuan.jpg';
 import Layout from "../../layouts/Layout";
 import './Styles.scss';
 import { useEffect, useState } from "react";
 import { VueSetting } from "../../assets/iconpack";
 import NewsDocumentCard from "../../components/Cards/NewsDocumentCard/NewsDocumentCard";
+import { fetchDocument, fetchDocumentTable } from "../../firebase";
+import FilterSettingMobile from "../../components/Filter/FilterSettingMobile/FilterSettingMobile";
 
-const data = [
-    { stt: 1, name: 'Tài liệu 1', date: '01/01/2023', download: '/download1' },
-    { stt: 2, name: 'Tài liệu 2', date: '01/02/2023', download: '/download2' },
-    { stt: 3, name: 'Tài liệu 3', date: '01/03/2023', download: '/download3' },
-    { stt: 4, name: 'Tài liệu 4', date: '01/04/2024', download: '/download4' },
-    { stt: 5, name: 'Tài liệu 5', date: '01/05/2025', download: '/download5' },
-    { stt: 6, name: 'Tài liệu 6', date: '01/06/2026', download: '/download6' },
-    { stt: 7, name: 'Tài liệu 7', date: '01/07/2027', download: '/download7' },
-    { stt: 8, name: 'Tài liệu 8', date: '01/08/2028', download: '/download8' },
-    { stt: 9, name: 'Tài liệu 9', date: '01/09/2029', download: '/download9' },
-    { stt: 10, name: 'Tài liệu 10', date: '01/010/2020', download: '/download10' },
-    { stt: 11, name: 'Tài liệu 11', date: '01/09/2029', download: '/download11' },
-    { stt: 12, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 13, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 14, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 15, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 16, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 17, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 18, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 19, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 20, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 21, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 22, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 23, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 24, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 25, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 26, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 27, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 28, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 29, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 30, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 31, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 32, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 33, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 34, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 35, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 36, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 37, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 38, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 39, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 40, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 41, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 42, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 43, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 44, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 45, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 46, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 47, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 48, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 49, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 50, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 51, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 52, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 53, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 54, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 55, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 56, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 57, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 58, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 59, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 60, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 61, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 62, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 63, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 64, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
-    { stt: 65, name: 'Tài liệu 12', date: '01/09/2029', download: '/download12' },
 
-    // Thêm dữ liệu khác nếu cần
-];
-const documents = [
-    { src: TueNhi, title: "Báo cáo Tài Chính năm 2022-2023" },
-    { src: TueNhi, title: "Báo cáo Tài Chính năm 2022-2023" },
-    { src: TueNhi, title: "Báo cáo Tài Chính năm 2022-2023" },
-    { src: TueNhi, title: "Báo cáo Tài Chính năm 2022-2023" },
-    { src: TueNhi, title: "Báo cáo Tài Chính năm 2022-2023" } // Thêm tài liệu nếu cần
-];
 const Document = () => {
+    const [documentCard, setDocumentCard] = useState<any[]>([]);
+    const [documentTable, setDocumentTable] = useState<any[]>([]);
     const [currentDocumentCard, setCurrentDocumentCard] = useState(4);
+    const [isOpenFilterSetting, setIsOpenFilterSetting] = useState(false);
+    const handleClickFilterSetting = () => {
+        setIsOpenFilterSetting(prevState => !prevState);
+    };
+    const handleCloseFilterSetting = () => {
+        setIsOpenFilterSetting(false); // Close the modal when the buttons are clicked
+    };
     const handleScroll = () => {
         const element = document.getElementById('scrollTargetDocument');
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
         }
     };
+    useEffect(() => {
+        const loadDocuments = async () => {
+            try {
+                const documentCardData = await fetchDocument();
+                setDocumentCard(documentCardData); //truyền dữ liệu slidesData và setPosts
+            } catch (error) {
+                console.error("Error fetching slides: ", error); // Nếu lỗi thì hiện thông báo
+            }
+        };
+
+        loadDocuments();
+    }, []);
+    useEffect(() => {
+        const loadDocumentTable = async () => {
+            try {
+                const documentTableData = await fetchDocumentTable();
+                setDocumentTable(documentTableData); //truyền dữ liệu slidesData và setPosts
+            } catch (error) {
+                console.error("Error fetching slides: ", error); // Nếu lỗi thì hiện thông báo
+            }
+        };
+
+        loadDocumentTable();
+    }, []);
     useEffect(() => {
         const updateItemsCard = () => {
             if (window.innerWidth < 768) {
@@ -116,12 +75,12 @@ const Document = () => {
             </div>
             <div className="inline-flex flex-col items-start gap-[22px]">
                 <div className="flex xl:h-[261px] xl:justify-center xl:items-start xl:gap-[22px] custom-frame-card-document">
-                    {documents.slice(0, currentDocumentCard).map((doc, index) => (
+                    {documentCard.slice(0, currentDocumentCard).map((doc, index) => (
                         <DocumentCard key={index} src={doc.src} title={doc.title} />
                     ))}
                 </div>
                 <div className="flex xl:h-[261px] xl:justify-center xl:items-start xl:gap-[22px] custom-frame-card-document">
-                    {documents.slice(0, currentDocumentCard).map((doc, index) => (
+                    {documentCard.slice(4, currentDocumentCard + 4).map((doc, index) => (
                         <DocumentCard key={index} src={doc.src} title={doc.title} />
                     ))}
                 </div>
@@ -132,10 +91,12 @@ const Document = () => {
             </div>
             <div className="flex items-center gap-2 rounded-xl p-3 custom-filterpackrowmobile lg:hidden">
                 <Search width="276px" />
-                <div className="custom-vuesetting">
+                <div className="custom-vuesetting" onClick={handleClickFilterSetting}>
                     <VueSetting />
+                    
                 </div>
             </div>
+            <FilterSettingMobile isOpen={isOpenFilterSetting} onClose={handleCloseFilterSetting} />
             <div
                 id="scrollTargetDocument"
                 className="w-full h-full flex items-center justify-center"
@@ -152,13 +113,15 @@ const Document = () => {
                         </div>
                     </div>
                     <div className="flex xl:w-[1126px] items-start rounded-lg">
-                        <Table data={data} />
+                        <Table 
+                            data={documentTable} 
+                        />
                     </div>
 
                 </div>
 
                 <div className="custom-newsdocument-card lg:hidden">
-                    <NewsDocumentCard data={data} />
+                    <NewsDocumentCard data={documentTable} />
                 </div>
 
             </div>

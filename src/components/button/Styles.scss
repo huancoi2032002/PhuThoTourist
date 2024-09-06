@@ -6,18 +6,35 @@
     align-items: center;
     gap: 10px;
     border-radius: 6px;
-    background: var(--blue-primary-500, #0054A6);
+    &.bg-primary {
+        background-color: #0054A6;
+    }
+
+    &.bg-secondary {
+        background-color: #FFF;
+        border: 1px solid #0054A6; // Optional: add a border to distinguish the secondary button
+    }
+
+    &:hover {
+        opacity: 0.9; // Add a hover effect for both variants
+    }
 }
 
 .custom-btn {
     color: #fff;
-    font-family: Roboto;
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     height: 100%;
     width: 100%;
+    &.bg-primary {
+        color: #FFF;
+    }
+
+    &.bg-secondary {
+        color: #0054A6;
+    }
 }
 .custom-button:hover{
     background: var(--blue-primary-400, #3376B8);

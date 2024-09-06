@@ -1,5 +1,6 @@
 import React from "react";
 import { Vector } from "../../assets/iconpack";
+import './Search.scss'
 
 type SearchDropdownProps = {
     recentSearches: string[];
@@ -9,7 +10,7 @@ type SearchDropdownProps = {
 
 const SearchDropdown: React.FC<SearchDropdownProps> = ({ recentSearches, onSearchClick, onDeleteClick }) => {
     return (
-        <div className="w-full absolute left-0 right-0 top-[64px] bg-white border border-gray-200 rounded-md shadow-md z-50">
+        <div className="w-full absolute left-0 right-0 top-[64px] bg-white border border-gray-200 rounded-md shadow-md custom-search-drop">
             <div className="p-4 font-bold border-b border-gray-100">
                 Tìm kiếm gần đây
             </div>

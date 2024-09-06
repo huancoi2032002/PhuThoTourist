@@ -30,7 +30,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
         } else {
             // Display a limited number of pages with ellipsis
             if (currentPage <= 2) {
-                pages.push(1, 2, 3, 4, '...');
+                pages.push(1, 2);
             } else if (currentPage >= totalPages - 1) {
                 pages.push('...', totalPages - 3, totalPages - 2, totalPages - 1, totalPages);
             } else {
@@ -52,9 +52,9 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
             <button
                 onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
                 disabled={currentPage === 1}
-                className="px-4 py-2 mx-2"
+                className="px-4 xl:py-2 mx-2"
             >
-                <ArrowLeft />
+                <ArrowLeft className={currentPage === 1 ? 'fill-[#A3A3A3] stroke-[#A3A3A3]' : 'fill-[#4D4D4D] stroke-[#4D4D4D]'}/>
             </button>
             {pageNumbers().map((page, index) =>
                 typeof page === 'number' ? (
@@ -76,7 +76,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
                 disabled={currentPage === totalPages}
                 className="px-4 py-2 mx-2"
             >
-                <ArrowRight />
+                <ArrowRight className={currentPage === totalPages ? 'fill-[#A3A3A3] stroke-[#A3A3A3]' : 'fill-[#4D4D4D] stroke-[#4D4D4D]'}/>
             </button>
         </div>
     );

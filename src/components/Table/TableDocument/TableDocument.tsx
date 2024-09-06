@@ -77,7 +77,7 @@ const Table: React.FC<TableProps> = ({ data }) => {
                     ))}
                 </div>
             </div>
-            <div className="w-[1125px] flex justify-between items-center">
+            <div className="w-[1125px] flex justify-between items-center mt-3">
                 <div className="flex items-center gap-2 font-roboto text-base text-[#4D4D4D]">
                     <p>Hiển thị</p>
                     <p className="flex justify-center items-center border border-[#0054A6] w-9 h-9 px-[13px] py-[3px] rounded-[4px] text-[#0054A6]">{pageSize}</p>
